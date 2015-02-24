@@ -46,7 +46,7 @@ void calcDistanceToPoint(unsigned int size, unsigned int index, int xIndex2,
     {
       xIndex2 = static_cast<int>(index2 % width);
       yIndex2 = static_cast<int>(index2 / width);
-      distByPoint[index] += sqrtf((xIndex2 - xIndex) * (xIndex2 - xIndex) +
+      distByPoint[index] += sqrtf(1.f*(xIndex2 - xIndex) * (xIndex2 - xIndex) +
                                   (yIndex2 - yIndex) * (yIndex2 - yIndex));
     }
   }
