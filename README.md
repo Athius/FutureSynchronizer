@@ -17,7 +17,8 @@ make
 
 Inside build folder;
 
->./examples/returnValue/returnValue</br>
+>./examples/returnValue/returnValue
+
 >./examples/returnVoid/returnVoid
 
 
