@@ -15,6 +15,13 @@ make
 
 ## How to launch examples:
 
+Two examples are provided: <i>returnValue</i> and <i>returnVoid</i>.
+
+<i>returnValue</i> shows you how to implement a function with a return value and
+get the result at the end of all the calculation.
+
+<i>returnVoid</i> shows you how to implement a function with no return value.
+
 Inside build folder;
 
 >./examples/returnValue/returnValue
