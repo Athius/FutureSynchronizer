@@ -37,15 +37,11 @@ Inside build folder;
   ├── examples
   │   ├── CMakeLists.txt
   │   ├── returnValue
-  │   │   ├── CMakeLists.txt
-  │   │   ├── EnableCXX11.cmake
-  │   │   ├── FindFutureSynchronizerLibrary.cmake
-  │   │   └── main.cpp
+  │   │   └── src
+  │   │       └── main.cpp
   │   └── returnVoid
-  │       ├── CMakeLists.txt
-  │       ├── EnableCXX11.cmake
-  │       ├── FindFutureSynchronizerLibrary.cmake
-  │       └── main.cpp
+  │       └── src
+  │           └── main.cpp
   └── lib
       ├── factory
       │   └── FutureFactory.hxx
