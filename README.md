@@ -55,3 +55,7 @@ Inside build folder;
       └── thread
           └── FutureSynchronyzer.hxx
 ~~~
+
+## TODO
+
+Fix std::bad_function_call inside returnValue (appears randomly)
