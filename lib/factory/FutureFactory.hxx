@@ -36,6 +36,9 @@
 
 namespace factory
 {
+  /**
+   * This class provides a factory to build futre with std::async methods.
+   */
   class AsyncFutureFactory
   {
   public:

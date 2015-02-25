@@ -36,10 +36,13 @@
 namespace policy
 {
   /**
-   * The class do nothing with the result passed to it's arguments
+   * The class does nothing with the result passed to it's arguments
    */
   typedef NoPolicy NoResultPolicy;
 
+  /**
+   * This class provides a policy to add a value to another one.
+   */
   class AddNumberResultPolicy
   {
   public:

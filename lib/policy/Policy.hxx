@@ -33,6 +33,9 @@
 
 namespace policy
 {
+  /**
+   * This class represents an empty policy
+   */
   class NoPolicy
   {
   };

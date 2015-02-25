@@ -40,7 +40,7 @@ namespace thread
 {
   /**
    * This class permits to add functions and it's arguments and launch
-   * them with a limit number of thread defined at the onbject's construction.
+   * them with a limit number of threads defined at the onbject's construction.
    * All the function added must returned the same type of argument.
    */
   template<class ResultPolicy=policy::NoResultPolicy,
