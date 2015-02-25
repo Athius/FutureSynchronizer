@@ -33,6 +33,12 @@
 #include <iostream>
 #include <chrono>
 
+/**
+ * This dumb function just return the sum of a loop;
+ * @param  start start of the loop
+ * @param  end   end of the loop
+ * @return       the sum;
+ */
 size_t cumul(const size_t & start, const size_t & end)
 {
   size_t res = 0;
@@ -51,19 +57,29 @@ int main(int argc, char **argv)
   size_t end = 500000000;
   size_t step = 5000000;
 
+  //The output result;
   size_t res = 0;
-  thread::FutureSynchronyzer<policy::AddNumberResultPolicy, factory::AsyncFutureFactory, size_t> sync(&res, 4);
 
+  //Create a future synchronizer with 4 threads,
+  //with the policy AddNumberResultPolicy,
+  //create AsyncFutureFactory and return a size_t element.
+  thread::FutureSynchronyzer<policy::AddNumberResultPolicy,
+                             factory::AsyncFutureFactory, size_t> sync(&res, 4);
+
+  //The loop to add all the functions;
   for (size_t i = 0; i < end; i += step)
   {
     sync.addFunction(cumul, i, i+step-1);
   }
 
+  //Launch all the function and wait for the result;
   sync.launchAndWait();
 
   endPoint = std::chrono::system_clock::now();
 
+  //Print the result from the sync
   std::cout << *(sync.outputResult()) << std::endl;
+  //Print the result to verify if it's the same value as above.
   std::cout << res << std::endl;
 
   auto us = std::chrono::duration_cast<std::chrono::microseconds>(endPoint - startPoint).count();
@@ -79,5 +95,3 @@ int main(int argc, char **argv)
 
   return 0;
 }
-
-

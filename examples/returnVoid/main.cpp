@@ -36,6 +36,17 @@
 #include <cmath>
 #include <chrono>
 
+/**
+ * Calulate the distance from a point to all the other points.
+ * @param size        data's size
+ * @param index       point to test
+ * @param xIndex2     temp index
+ * @param width       data's width
+ * @param yIndex2     temp index
+ * @param distByPoint return vector result
+ * @param xIndex      x-coordinate point to test
+ * @param yIndex      y-coordinate point to test
+ */
 void calcDistanceToPoint(unsigned int size, unsigned int index, int xIndex2,
     unsigned int width, int yIndex2, std::vector<float> & distByPoint,
     int xIndex, int yIndex)
@@ -62,8 +73,13 @@ void distPointCalculation()
   distByPoint.resize(size);
   int xIndex, yIndex;
   int xIndex2, yIndex2;
+
+  //Create a future synchronyzer with default value: no result policy,
+  //create asynchrone future, and with the number of threads of the current
+  //computer.
   thread::FutureSynchronyzer<> sync;
 
+  //The loop to add all the functions;
   for (unsigned int index = 0; index < size; ++index)
   {
     xIndex = static_cast<int>(index % width);
@@ -71,6 +87,8 @@ void distPointCalculation()
     sync.addFunction(calcDistanceToPoint, size, index, xIndex2, width, yIndex2,
         std::ref(distByPoint), xIndex, yIndex);
   }
+
+  //Launch all the function and wait;
   sync.launchAndWait();
 
   std::ofstream ofs("test.csv");
@@ -101,5 +119,3 @@ int main(int argc, char **argv)
 
   return 0;
 }
-
-
