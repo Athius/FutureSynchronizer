@@ -1,0 +1,115 @@
+<toc label="FutureSynchronyzer" topic="index.html">
+  <topic label="Namespaces">
+    <topic label="Namespace List" href="namespaces.html">
+      <topic label="factory" href="namespacefactory.html"/>
+      <topic label="policy" href="namespacepolicy.html"/>
+      <topic label="thread" href="namespacethread.html"/>
+    </topic>
+    <topic label="Namespace Members" href="namespacemembers.html">
+      <topic label="All" href="namespacemembers.html"/>
+      <topic label="Typedefs" href="namespacemembers_type.html"/>
+    </topic>
+  </topic>
+  <topic label="Classes">
+    <topic label="Class List" href="annotated.html">
+      <topic label="factory" href="namespacefactory.html">
+        <topic label="AsyncFutureFactory" href="classfactory_1_1_async_future_factory.html">
+          <topic label="AsyncFutureFactory" href="classfactory_1_1_async_future_factory.html#a081b3c7f07fd8b3409ad1d78ab1711b3"/>
+          <topic label="~AsyncFutureFactory" href="classfactory_1_1_async_future_factory.html#aaca75434082a8e9e73bf53c7df7d12ec"/>
+          <topic label="createFuture" href="classfactory_1_1_async_future_factory.html#ac5e13da49fe96d7ac62c0582c922c586"/>
+        </topic>
+      </topic>
+      <topic label="policy" href="namespacepolicy.html">
+        <topic label="AddNumberResultPolicy" href="classpolicy_1_1_add_number_result_policy.html">
+          <topic label="AddNumberResultPolicy" href="classpolicy_1_1_add_number_result_policy.html#acd49d140175ef44bed6d4fb8339ada92"/>
+          <topic label="~AddNumberResultPolicy" href="classpolicy_1_1_add_number_result_policy.html#abb01bae791b5a4643fae6a0bbcb3eb03"/>
+          <topic label="applyResult" href="classpolicy_1_1_add_number_result_policy.html#aa0571dfc6c981de119fa4575578f1ec6"/>
+        </topic>
+        <topic label="NoPolicy" href="classpolicy_1_1_no_policy.html"/>
+      </topic>
+      <topic label="thread" href="namespacethread.html">
+        <topic label="FutureSynchronyzer" href="classthread_1_1_future_synchronyzer.html">
+          <topic label="FutureSynchronyzer" href="classthread_1_1_future_synchronyzer.html#a1831e7d3dd72a43306df921abd245a69"/>
+          <topic label="~FutureSynchronyzer" href="classthread_1_1_future_synchronyzer.html#a48cb77c0d7c1f9bfb7e175e2877251b9"/>
+          <topic label="addFunction" href="classthread_1_1_future_synchronyzer.html#ae779bc3d3a10c078c957825699958fec"/>
+          <topic label="applyResult" href="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2"/>
+          <topic label="applyResult" href="classthread_1_1_future_synchronyzer.html#a28a6cdcdd4c480a7324e20d5567ca348"/>
+          <topic label="getNextFunction" href="classthread_1_1_future_synchronyzer.html#a45a5e9e358cebc104bc7816da1b84104"/>
+          <topic label="launch" href="classthread_1_1_future_synchronyzer.html#a14dae5fac679e721ba919d53313c0429"/>
+          <topic label="launchAndWait" href="classthread_1_1_future_synchronyzer.html#a5e5528be4da8754e76d7b89914cdb4c1"/>
+          <topic label="numThreads" href="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1"/>
+          <topic label="outputResult" href="classthread_1_1_future_synchronyzer.html#abce0c645cc03b98fd30ed6943b8de67f"/>
+          <topic label="wait" href="classthread_1_1_future_synchronyzer.html#a4bccddb2d806c69cbd23b2a50a1ad678"/>
+          <topic label="m_functions" href="classthread_1_1_future_synchronyzer.html#a7ab99eb4fbcce75099753ae1c5f5b8f5"/>
+          <topic label="m_futures" href="classthread_1_1_future_synchronyzer.html#ad99b8341e4c51af3d3f62d052ea8252d"/>
+          <topic label="m_numThreads" href="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630"/>
+          <topic label="m_outputResult" href="classthread_1_1_future_synchronyzer.html#a9d0cf1110ddc2e2c1bf4b27c9e2d9310"/>
+        </topic>
+      </topic>
+      <topic label="FutureFactory" href="class_future_factory.html"/>
+      <topic label="ResultPolicy" href="class_result_policy.html"/>
+    </topic>
+    <topic label="Class Index" href="classes.html"/>
+    <topic label="Class Hierarchy" href="hierarchy.html">
+      <topic label="policy::AddNumberResultPolicy" href="classpolicy_1_1_add_number_result_policy.html"/>
+      <topic label="factory::AsyncFutureFactory" href="classfactory_1_1_async_future_factory.html"/>
+      <topic label="FutureFactory" href="class_future_factory.html">
+        <topic label="thread::FutureSynchronyzer&lt; ResultPolicy, FutureFactory, OutputResult &gt;" href="classthread_1_1_future_synchronyzer.html"/>
+      </topic>
+      <topic label="policy::NoPolicy" href="classpolicy_1_1_no_policy.html"/>
+      <topic label="ResultPolicy" href="class_result_policy.html">
+        <topic label="thread::FutureSynchronyzer&lt; ResultPolicy, FutureFactory, OutputResult &gt;" href="classthread_1_1_future_synchronyzer.html"/>
+      </topic>
+      <topic label="OutputResult *"/>
+      <topic label="size_t"/>
+      <topic label="vector&lt; std::function&lt; OutputResult()&gt; &gt;"/>
+      <topic label="vector&lt; std::future&lt; OutputResult &gt; &gt;"/>
+    </topic>
+    <topic label="Class Members" href="functions.html">
+      <topic label="All" href="functions.html"/>
+      <topic label="Functions" href="functions_func.html"/>
+      <topic label="Variables" href="functions_vars.html"/>
+    </topic>
+  </topic>
+  <topic label="Files">
+    <topic label="File List" href="files.html">
+      <topic label="FutureFactory.hxx" href="_future_factory_8hxx.html">
+        <topic label="AsyncFutureFactory" href="classfactory_1_1_async_future_factory.html">
+          <topic label="AsyncFutureFactory" href="classfactory_1_1_async_future_factory.html#a081b3c7f07fd8b3409ad1d78ab1711b3"/>
+          <topic label="~AsyncFutureFactory" href="classfactory_1_1_async_future_factory.html#aaca75434082a8e9e73bf53c7df7d12ec"/>
+          <topic label="createFuture" href="classfactory_1_1_async_future_factory.html#ac5e13da49fe96d7ac62c0582c922c586"/>
+        </topic>
+      </topic>
+      <topic label="FutureSynchronyzer.hxx" href="_future_synchronyzer_8hxx.html">
+        <topic label="FutureSynchronyzer" href="classthread_1_1_future_synchronyzer.html">
+          <topic label="FutureSynchronyzer" href="classthread_1_1_future_synchronyzer.html#a1831e7d3dd72a43306df921abd245a69"/>
+          <topic label="~FutureSynchronyzer" href="classthread_1_1_future_synchronyzer.html#a48cb77c0d7c1f9bfb7e175e2877251b9"/>
+          <topic label="addFunction" href="classthread_1_1_future_synchronyzer.html#ae779bc3d3a10c078c957825699958fec"/>
+          <topic label="applyResult" href="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2"/>
+          <topic label="applyResult" href="classthread_1_1_future_synchronyzer.html#a28a6cdcdd4c480a7324e20d5567ca348"/>
+          <topic label="getNextFunction" href="classthread_1_1_future_synchronyzer.html#a45a5e9e358cebc104bc7816da1b84104"/>
+          <topic label="launch" href="classthread_1_1_future_synchronyzer.html#a14dae5fac679e721ba919d53313c0429"/>
+          <topic label="launchAndWait" href="classthread_1_1_future_synchronyzer.html#a5e5528be4da8754e76d7b89914cdb4c1"/>
+          <topic label="numThreads" href="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1"/>
+          <topic label="outputResult" href="classthread_1_1_future_synchronyzer.html#abce0c645cc03b98fd30ed6943b8de67f"/>
+          <topic label="wait" href="classthread_1_1_future_synchronyzer.html#a4bccddb2d806c69cbd23b2a50a1ad678"/>
+          <topic label="m_functions" href="classthread_1_1_future_synchronyzer.html#a7ab99eb4fbcce75099753ae1c5f5b8f5"/>
+          <topic label="m_futures" href="classthread_1_1_future_synchronyzer.html#ad99b8341e4c51af3d3f62d052ea8252d"/>
+          <topic label="m_numThreads" href="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630"/>
+          <topic label="m_outputResult" href="classthread_1_1_future_synchronyzer.html#a9d0cf1110ddc2e2c1bf4b27c9e2d9310"/>
+        </topic>
+      </topic>
+      <topic label="Policy.hxx" href="_policy_8hxx.html">
+        <topic label="NoPolicy" href="classpolicy_1_1_no_policy.html"/>
+      </topic>
+      <topic label="ResultPolicy.hxx" href="_result_policy_8hxx.html">
+        <topic label="AddNumberResultPolicy" href="classpolicy_1_1_add_number_result_policy.html">
+          <topic label="AddNumberResultPolicy" href="classpolicy_1_1_add_number_result_policy.html#acd49d140175ef44bed6d4fb8339ada92"/>
+          <topic label="~AddNumberResultPolicy" href="classpolicy_1_1_add_number_result_policy.html#abb01bae791b5a4643fae6a0bbcb3eb03"/>
+          <topic label="applyResult" href="classpolicy_1_1_add_number_result_policy.html#aa0571dfc6c981de119fa4575578f1ec6"/>
+        </topic>
+        <topic label="NoResultPolicy" href="_result_policy_8hxx.html#aecc1897b44923d70c17dd7e0425b5255"/>
+      </topic>
+    </topic>
+  </topic>
+</toc>

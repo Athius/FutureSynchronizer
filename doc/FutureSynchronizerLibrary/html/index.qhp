@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+  <namespace>org.doxygen.Project</namespace>
+  <virtualFolder>doc</virtualFolder>
+  <filterSection>
+    <filterAttribute>doxygen</filterAttribute>
+    <toc>
+      <section title="FutureSynchronyzer /doc" ref="index.html">
+        <section title="Namespaces">
+          <section title="Namespace List" ref="namespaces.html">
+            <section title="factory" ref="namespacefactory.html" />
+            <section title="policy" ref="namespacepolicy.html" />
+            <section title="thread" ref="namespacethread.html" />
+          </section>
+          <section title="Namespace Members" ref="namespacemembers.html">
+            <section title="All" ref="namespacemembers.html" />
+            <section title="Typedefs" ref="namespacemembers_type.html" />
+          </section>
+        </section>
+        <section title="Classes">
+          <section title="Class List" ref="annotated.html">
+            <section title="factory" ref="namespacefactory.html">
+              <section title="AsyncFutureFactory" ref="classfactory_1_1_async_future_factory.html">
+                <section title="AsyncFutureFactory" ref="classfactory_1_1_async_future_factory.html#a081b3c7f07fd8b3409ad1d78ab1711b3" />
+                <section title="~AsyncFutureFactory" ref="classfactory_1_1_async_future_factory.html#aaca75434082a8e9e73bf53c7df7d12ec" />
+                <section title="createFuture" ref="classfactory_1_1_async_future_factory.html#ac5e13da49fe96d7ac62c0582c922c586" />
+              </section>
+            </section>
+            <section title="policy" ref="namespacepolicy.html">
+              <section title="AddNumberResultPolicy" ref="classpolicy_1_1_add_number_result_policy.html">
+                <section title="AddNumberResultPolicy" ref="classpolicy_1_1_add_number_result_policy.html#acd49d140175ef44bed6d4fb8339ada92" />
+                <section title="~AddNumberResultPolicy" ref="classpolicy_1_1_add_number_result_policy.html#abb01bae791b5a4643fae6a0bbcb3eb03" />
+                <section title="applyResult" ref="classpolicy_1_1_add_number_result_policy.html#aa0571dfc6c981de119fa4575578f1ec6" />
+              </section>
+              <section title="NoPolicy" ref="classpolicy_1_1_no_policy.html" />
+            </section>
+            <section title="thread" ref="namespacethread.html">
+              <section title="FutureSynchronyzer" ref="classthread_1_1_future_synchronyzer.html">
+                <section title="FutureSynchronyzer" ref="classthread_1_1_future_synchronyzer.html#a1831e7d3dd72a43306df921abd245a69" />
+                <section title="~FutureSynchronyzer" ref="classthread_1_1_future_synchronyzer.html#a48cb77c0d7c1f9bfb7e175e2877251b9" />
+                <section title="addFunction" ref="classthread_1_1_future_synchronyzer.html#ae779bc3d3a10c078c957825699958fec" />
+                <section title="applyResult" ref="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2" />
+                <section title="applyResult" ref="classthread_1_1_future_synchronyzer.html#a28a6cdcdd4c480a7324e20d5567ca348" />
+                <section title="getNextFunction" ref="classthread_1_1_future_synchronyzer.html#a45a5e9e358cebc104bc7816da1b84104" />
+                <section title="launch" ref="classthread_1_1_future_synchronyzer.html#a14dae5fac679e721ba919d53313c0429" />
+                <section title="launchAndWait" ref="classthread_1_1_future_synchronyzer.html#a5e5528be4da8754e76d7b89914cdb4c1" />
+                <section title="numThreads" ref="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1" />
+                <section title="outputResult" ref="classthread_1_1_future_synchronyzer.html#abce0c645cc03b98fd30ed6943b8de67f" />
+                <section title="wait" ref="classthread_1_1_future_synchronyzer.html#a4bccddb2d806c69cbd23b2a50a1ad678" />
+                <section title="m_functions" ref="classthread_1_1_future_synchronyzer.html#a7ab99eb4fbcce75099753ae1c5f5b8f5" />
+                <section title="m_futures" ref="classthread_1_1_future_synchronyzer.html#ad99b8341e4c51af3d3f62d052ea8252d" />
+                <section title="m_numThreads" ref="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630" />
+                <section title="m_outputResult" ref="classthread_1_1_future_synchronyzer.html#a9d0cf1110ddc2e2c1bf4b27c9e2d9310" />
+              </section>
+            </section>
+            <section title="FutureFactory" ref="class_future_factory.html" />
+            <section title="ResultPolicy" ref="class_result_policy.html" />
+          </section>
+          <section title="Class Index" ref="classes.html" />
+          <section title="Class Hierarchy" ref="hierarchy.html">
+            <section title="policy::AddNumberResultPolicy" ref="classpolicy_1_1_add_number_result_policy.html" />
+            <section title="factory::AsyncFutureFactory" ref="classfactory_1_1_async_future_factory.html" />
+            <section title="FutureFactory" ref="class_future_factory.html">
+              <section title="thread::FutureSynchronyzer&lt; ResultPolicy, FutureFactory, OutputResult &gt;" ref="classthread_1_1_future_synchronyzer.html" />
+            </section>
+            <section title="policy::NoPolicy" ref="classpolicy_1_1_no_policy.html" />
+            <section title="ResultPolicy" ref="class_result_policy.html">
+              <section title="thread::FutureSynchronyzer&lt; ResultPolicy, FutureFactory, OutputResult &gt;" ref="classthread_1_1_future_synchronyzer.html" />
+            </section>
+            <section title="OutputResult *" />
+            <section title="size_t" />
+            <section title="vector&lt; std::function&lt; OutputResult()&gt; &gt;" />
+            <section title="vector&lt; std::future&lt; OutputResult &gt; &gt;" />
+          </section>
+          <section title="Class Members" ref="functions.html">
+            <section title="All" ref="functions.html" />
+            <section title="Functions" ref="functions_func.html" />
+            <section title="Variables" ref="functions_vars.html" />
+          </section>
+        </section>
+        <section title="Files">
+          <section title="File List" ref="files.html">
+            <section title="FutureFactory.hxx" ref="_future_factory_8hxx.html">
+              <section title="AsyncFutureFactory" ref="classfactory_1_1_async_future_factory.html">
+                <section title="AsyncFutureFactory" ref="classfactory_1_1_async_future_factory.html#a081b3c7f07fd8b3409ad1d78ab1711b3" />
+                <section title="~AsyncFutureFactory" ref="classfactory_1_1_async_future_factory.html#aaca75434082a8e9e73bf53c7df7d12ec" />
+                <section title="createFuture" ref="classfactory_1_1_async_future_factory.html#ac5e13da49fe96d7ac62c0582c922c586" />
+              </section>
+            </section>
+            <section title="FutureSynchronyzer.hxx" ref="_future_synchronyzer_8hxx.html">
+              <section title="FutureSynchronyzer" ref="classthread_1_1_future_synchronyzer.html">
+                <section title="FutureSynchronyzer" ref="classthread_1_1_future_synchronyzer.html#a1831e7d3dd72a43306df921abd245a69" />
+                <section title="~FutureSynchronyzer" ref="classthread_1_1_future_synchronyzer.html#a48cb77c0d7c1f9bfb7e175e2877251b9" />
+                <section title="addFunction" ref="classthread_1_1_future_synchronyzer.html#ae779bc3d3a10c078c957825699958fec" />
+                <section title="applyResult" ref="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2" />
+                <section title="applyResult" ref="classthread_1_1_future_synchronyzer.html#a28a6cdcdd4c480a7324e20d5567ca348" />
+                <section title="getNextFunction" ref="classthread_1_1_future_synchronyzer.html#a45a5e9e358cebc104bc7816da1b84104" />
+                <section title="launch" ref="classthread_1_1_future_synchronyzer.html#a14dae5fac679e721ba919d53313c0429" />
+                <section title="launchAndWait" ref="classthread_1_1_future_synchronyzer.html#a5e5528be4da8754e76d7b89914cdb4c1" />
+                <section title="numThreads" ref="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1" />
+                <section title="outputResult" ref="classthread_1_1_future_synchronyzer.html#abce0c645cc03b98fd30ed6943b8de67f" />
+                <section title="wait" ref="classthread_1_1_future_synchronyzer.html#a4bccddb2d806c69cbd23b2a50a1ad678" />
+                <section title="m_functions" ref="classthread_1_1_future_synchronyzer.html#a7ab99eb4fbcce75099753ae1c5f5b8f5" />
+                <section title="m_futures" ref="classthread_1_1_future_synchronyzer.html#ad99b8341e4c51af3d3f62d052ea8252d" />
+                <section title="m_numThreads" ref="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630" />
+                <section title="m_outputResult" ref="classthread_1_1_future_synchronyzer.html#a9d0cf1110ddc2e2c1bf4b27c9e2d9310" />
+              </section>
+            </section>
+            <section title="Policy.hxx" ref="_policy_8hxx.html">
+              <section title="NoPolicy" ref="classpolicy_1_1_no_policy.html" />
+            </section>
+            <section title="ResultPolicy.hxx" ref="_result_policy_8hxx.html">
+              <section title="AddNumberResultPolicy" ref="classpolicy_1_1_add_number_result_policy.html">
+                <section title="AddNumberResultPolicy" ref="classpolicy_1_1_add_number_result_policy.html#acd49d140175ef44bed6d4fb8339ada92" />
+                <section title="~AddNumberResultPolicy" ref="classpolicy_1_1_add_number_result_policy.html#abb01bae791b5a4643fae6a0bbcb3eb03" />
+                <section title="applyResult" ref="classpolicy_1_1_add_number_result_policy.html#aa0571dfc6c981de119fa4575578f1ec6" />
+              </section>
+              <section title="NoResultPolicy" ref="_result_policy_8hxx.html#aecc1897b44923d70c17dd7e0425b5255" />
+            </section>
+          </section>
+        </section>
+      </section>
+    </toc>
+    <keywords>
+      <keyword name="NoResultPolicy" id="ResultPolicy.hxx::NoResultPolicy" ref="_result_policy_8hxx.html#aecc1897b44923d70c17dd7e0425b5255" />
+      <keyword name="FutureFactory" id="FutureFactory" ref="class_future_factory.html" />
+      <keyword name="ResultPolicy" id="ResultPolicy" ref="class_result_policy.html" />
+      <keyword name="factory" id="factory" ref="namespacefactory.html" />
+      <keyword name="factory::AsyncFutureFactory" id="factory::AsyncFutureFactory" ref="classfactory_1_1_async_future_factory.html" />
+      <keyword name="AsyncFutureFactory" id="factory::AsyncFutureFactory::AsyncFutureFactory" ref="classfactory_1_1_async_future_factory.html#a081b3c7f07fd8b3409ad1d78ab1711b3" />
+      <keyword name="~AsyncFutureFactory" id="factory::AsyncFutureFactory::~AsyncFutureFactory" ref="classfactory_1_1_async_future_factory.html#aaca75434082a8e9e73bf53c7df7d12ec" />
+      <keyword name="createFuture" id="factory::AsyncFutureFactory::createFuture" ref="classfactory_1_1_async_future_factory.html#ac5e13da49fe96d7ac62c0582c922c586" />
+      <keyword name="policy" id="policy" ref="namespacepolicy.html" />
+      <keyword name="NoResultPolicy" id="policy::NoResultPolicy" ref="namespacepolicy.html#aecc1897b44923d70c17dd7e0425b5255" />
+      <keyword name="policy::AddNumberResultPolicy" id="policy::AddNumberResultPolicy" ref="classpolicy_1_1_add_number_result_policy.html" />
+      <keyword name="AddNumberResultPolicy" id="policy::AddNumberResultPolicy::AddNumberResultPolicy" ref="classpolicy_1_1_add_number_result_policy.html#acd49d140175ef44bed6d4fb8339ada92" />
+      <keyword name="~AddNumberResultPolicy" id="policy::AddNumberResultPolicy::~AddNumberResultPolicy" ref="classpolicy_1_1_add_number_result_policy.html#abb01bae791b5a4643fae6a0bbcb3eb03" />
+      <keyword name="applyResult" id="policy::AddNumberResultPolicy::applyResult" ref="classpolicy_1_1_add_number_result_policy.html#aa0571dfc6c981de119fa4575578f1ec6" />
+      <keyword name="policy::NoPolicy" id="policy::NoPolicy" ref="classpolicy_1_1_no_policy.html" />
+      <keyword name="thread" id="thread" ref="namespacethread.html" />
+      <keyword name="thread::FutureSynchronyzer" id="thread::FutureSynchronyzer" ref="classthread_1_1_future_synchronyzer.html" />
+      <keyword name="FutureSynchronyzer" id="thread::FutureSynchronyzer::FutureSynchronyzer" ref="classthread_1_1_future_synchronyzer.html#a1831e7d3dd72a43306df921abd245a69" />
+      <keyword name="~FutureSynchronyzer" id="thread::FutureSynchronyzer::~FutureSynchronyzer" ref="classthread_1_1_future_synchronyzer.html#a48cb77c0d7c1f9bfb7e175e2877251b9" />
+      <keyword name="addFunction" id="thread::FutureSynchronyzer::addFunction" ref="classthread_1_1_future_synchronyzer.html#ae779bc3d3a10c078c957825699958fec" />
+      <keyword name="launch" id="thread::FutureSynchronyzer::launch" ref="classthread_1_1_future_synchronyzer.html#a14dae5fac679e721ba919d53313c0429" />
+      <keyword name="wait" id="thread::FutureSynchronyzer::wait" ref="classthread_1_1_future_synchronyzer.html#a4bccddb2d806c69cbd23b2a50a1ad678" />
+      <keyword name="launchAndWait" id="thread::FutureSynchronyzer::launchAndWait" ref="classthread_1_1_future_synchronyzer.html#a5e5528be4da8754e76d7b89914cdb4c1" />
+      <keyword name="outputResult" id="thread::FutureSynchronyzer::outputResult" ref="classthread_1_1_future_synchronyzer.html#abce0c645cc03b98fd30ed6943b8de67f" />
+      <keyword name="numThreads" id="thread::FutureSynchronyzer::numThreads" ref="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1" />
+      <keyword name="getNextFunction" id="thread::FutureSynchronyzer::getNextFunction" ref="classthread_1_1_future_synchronyzer.html#a45a5e9e358cebc104bc7816da1b84104" />
+      <keyword name="applyResult" id="thread::FutureSynchronyzer::applyResult" ref="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2" />
+      <keyword name="applyResult" id="thread::FutureSynchronyzer::applyResult" ref="classthread_1_1_future_synchronyzer.html#a28a6cdcdd4c480a7324e20d5567ca348" />
+      <keyword name="m_futures" id="thread::FutureSynchronyzer::m_futures" ref="classthread_1_1_future_synchronyzer.html#ad99b8341e4c51af3d3f62d052ea8252d" />
+      <keyword name="m_functions" id="thread::FutureSynchronyzer::m_functions" ref="classthread_1_1_future_synchronyzer.html#a7ab99eb4fbcce75099753ae1c5f5b8f5" />
+      <keyword name="m_numThreads" id="thread::FutureSynchronyzer::m_numThreads" ref="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630" />
+      <keyword name="m_outputResult" id="thread::FutureSynchronyzer::m_outputResult" ref="classthread_1_1_future_synchronyzer.html#a9d0cf1110ddc2e2c1bf4b27c9e2d9310" />
+    </keywords>
+    <files>
+      <file>tabs.css</file>
+      <file>tab_a.png</file>
+      <file>tab_b.png</file>
+      <file>tab_h.png</file>
+      <file>tab_s.png</file>
+      <file>nav_h.png</file>
+      <file>nav_f.png</file>
+      <file>bc_s.png</file>
+      <file>doxygen.png</file>
+      <file>closed.png</file>
+      <file>open.png</file>
+      <file>bdwn.png</file>
+      <file>sync_on.png</file>
+      <file>sync_off.png</file>
+      <file>doc.png</file>
+      <file>folderopen.png</file>
+      <file>folderclosed.png</file>
+      <file>arrowdown.png</file>
+      <file>arrowright.png</file>
+      <file>splitbar.png</file>
+      <file>doxygen.css</file>
+      <file>search/search_l.png</file>
+      <file>search/search_m.png</file>
+      <file>search/search_r.png</file>
+      <file>search/mag.png</file>
+      <file>search/search.css</file>
+      <file>_future_factory_8hxx_source.html</file>
+      <file>_future_synchronyzer_8hxx_source.html</file>
+      <file>_policy_8hxx_source.html</file>
+      <file>_result_policy_8hxx_source.html</file>
+      <file>_future_factory_8hxx.html</file>
+      <file>_future_factory_8hxx__incl.svg</file>
+      <file>_future_factory_8hxx__incl.svg</file>
+      <file>_future_factory_8hxx__dep__incl.svg</file>
+      <file>_future_factory_8hxx__dep__incl.svg</file>
+      <file>_future_synchronyzer_8hxx.html</file>
+      <file>_future_synchronyzer_8hxx__incl.svg</file>
+      <file>_future_synchronyzer_8hxx__incl.svg</file>
+      <file>_policy_8hxx.html</file>
+      <file>_policy_8hxx__dep__incl.svg</file>
+      <file>_policy_8hxx__dep__incl.svg</file>
+      <file>_result_policy_8hxx.html</file>
+      <file>_result_policy_8hxx__incl.svg</file>
+      <file>_result_policy_8hxx__incl.svg</file>
+      <file>_result_policy_8hxx__dep__incl.svg</file>
+      <file>_result_policy_8hxx__dep__incl.svg</file>
+      <file>class_future_factory.html</file>
+      <file>class_future_factory__inherit__graph.svg</file>
+      <file>class_future_factory__inherit__graph.svg</file>
+      <file>class_future_factory__coll__graph.svg</file>
+      <file>class_future_factory__coll__graph.svg</file>
+      <file>class_result_policy.html</file>
+      <file>class_result_policy__inherit__graph.svg</file>
+      <file>class_result_policy__inherit__graph.svg</file>
+      <file>class_result_policy__coll__graph.svg</file>
+      <file>class_result_policy__coll__graph.svg</file>
+      <file>namespacefactory.html</file>
+      <file>classfactory_1_1_async_future_factory.html</file>
+      <file>classfactory_1_1_async_future_factory__coll__graph.svg</file>
+      <file>classfactory_1_1_async_future_factory__coll__graph.svg</file>
+      <file>classfactory_1_1_async_future_factory-members.html</file>
+      <file>namespacepolicy.html</file>
+      <file>classpolicy_1_1_add_number_result_policy.html</file>
+      <file>classpolicy_1_1_add_number_result_policy__coll__graph.svg</file>
+      <file>classpolicy_1_1_add_number_result_policy__coll__graph.svg</file>
+      <file>classpolicy_1_1_add_number_result_policy-members.html</file>
+      <file>classpolicy_1_1_no_policy.html</file>
+      <file>classpolicy_1_1_no_policy__coll__graph.svg</file>
+      <file>classpolicy_1_1_no_policy__coll__graph.svg</file>
+      <file>namespacethread.html</file>
+      <file>classthread_1_1_future_synchronyzer.html</file>
+      <file>classthread_1_1_future_synchronyzer__inherit__graph.svg</file>
+      <file>classthread_1_1_future_synchronyzer__inherit__graph.svg</file>
+      <file>classthread_1_1_future_synchronyzer__coll__graph.svg</file>
+      <file>classthread_1_1_future_synchronyzer__coll__graph.svg</file>
+      <file>classthread_1_1_future_synchronyzer_ad6338eaf056042a00d4af216cb7e77e2_icgraph.svg</file>
+      <file>classthread_1_1_future_synchronyzer_ad6338eaf056042a00d4af216cb7e77e2_icgraph.svg</file>
+      <file>classthread_1_1_future_synchronyzer_a45a5e9e358cebc104bc7816da1b84104_icgraph.svg</file>
+      <file>classthread_1_1_future_synchronyzer_a45a5e9e358cebc104bc7816da1b84104_icgraph.svg</file>
+      <file>classthread_1_1_future_synchronyzer_a14dae5fac679e721ba919d53313c0429_cgraph.svg</file>
+      <file>classthread_1_1_future_synchronyzer_a14dae5fac679e721ba919d53313c0429_cgraph.svg</file>
+      <file>classthread_1_1_future_synchronyzer_a14dae5fac679e721ba919d53313c0429_icgraph.svg</file>
+      <file>classthread_1_1_future_synchronyzer_a14dae5fac679e721ba919d53313c0429_icgraph.svg</file>
+      <file>classthread_1_1_future_synchronyzer_a5e5528be4da8754e76d7b89914cdb4c1_cgraph.svg</file>
+      <file>classthread_1_1_future_synchronyzer_a5e5528be4da8754e76d7b89914cdb4c1_cgraph.svg</file>
+      <file>classthread_1_1_future_synchronyzer_a4bccddb2d806c69cbd23b2a50a1ad678_cgraph.svg</file>
+      <file>classthread_1_1_future_synchronyzer_a4bccddb2d806c69cbd23b2a50a1ad678_cgraph.svg</file>
+      <file>classthread_1_1_future_synchronyzer_a4bccddb2d806c69cbd23b2a50a1ad678_icgraph.svg</file>
+      <file>classthread_1_1_future_synchronyzer_a4bccddb2d806c69cbd23b2a50a1ad678_icgraph.svg</file>
+      <file>classthread_1_1_future_synchronyzer-members.html</file>
+      <file>graph_legend.svg</file>
+      <file>graph_legend.html</file>
+      <file>dir_6c6285f33e924b855dbbb7caf2af1c96.html</file>
+      <file>dir_97aefd0d527b934f1d99a682da8fe6a9.html</file>
+      <file>dir_53fe90820655b3d9ac1ef8ef1695bb4d.html</file>
+      <file>dir_4c7f6d4650672306240535142be52d53.html</file>
+      <file>index.html</file>
+      <file>namespaces.html</file>
+      <file>namespacemembers.html</file>
+      <file>namespacemembers_type.html</file>
+      <file>annotated.html</file>
+      <file>classes.html</file>
+      <file>hierarchy.html</file>
+      <file>inherits.html</file>
+      <file>inherit_graph_0.svg</file>
+      <file>inherit_graph_1.svg</file>
+      <file>inherit_graph_2.svg</file>
+      <file>inherit_graph_3.svg</file>
+      <file>inherit_graph_4.svg</file>
+      <file>inherit_graph_5.svg</file>
+      <file>inherit_graph_6.svg</file>
+      <file>inherit_graph_7.svg</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_vars.html</file>
+      <file>files.html</file>
+    </files>
+  </filterSection>
+</QtHelpProject>
