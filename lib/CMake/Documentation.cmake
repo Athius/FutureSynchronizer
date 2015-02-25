@@ -40,9 +40,6 @@ macro(try_build_documentation)
     	# Copy Doxyfile in each project and replace all variable like @@PROJECT_OUTPUT_NAME@_SOURCE_DIR@ by its value
     	configure_file(${CMAKE_CURRENT_BINARY_DIR}/doc/Doxyfile-html ${CMAKE_CURRENT_BINARY_DIR}/doc/Doxyfile-html @ONLY)
 
-
-      message(STATUS ${PROJECT_OUTPUT_NAME})
-
     	# Set variable so as to build the documentation with doxygen
     	set(DOCUMENTATION_OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/doc/html/index.html)
     	set(DOCUMENTATION_COMMAND ${DOXYGEN_EXECUTABLE}
