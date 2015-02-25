@@ -58,4 +58,4 @@ Inside build folder;
 
 ## TODO
 
-Fix std::bad_function_call inside returnValue (appears randomly)
+Fix std::bad_function_call inside returnValue example (appears randomly).
