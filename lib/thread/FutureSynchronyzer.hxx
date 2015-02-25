@@ -38,14 +38,14 @@
 
 namespace thread
 {
+  template<class ResultPolicy=policy::NoResultPolicy,
+      class FutureFactory=factory::AsyncFutureFactory,
+      typename OutputResult=void>
   /**
    * This class permits to add functions and it's arguments and launch
    * them with a limit number of threads defined at the onbject's construction.
    * All the function added must returned the same type of argument.
    */
-  template<class ResultPolicy=policy::NoResultPolicy,
-      class FutureFactory=factory::AsyncFutureFactory,
-      typename OutputResult=void>
   class FutureSynchronyzer : public ResultPolicy, public FutureFactory
   {
   private:
@@ -56,12 +56,23 @@ namespace thread
 
   public:
 
+    /**
+     * Construct the Future Synchronizer.
+     * @param outputResult the return result (optional);
+     * @param numThreads the max number of threads. By default, the number of
+     * concurrent threads supported if detected or 1.
+     */
     FutureSynchronyzer(OutputResult * outputResult = NULL,
                        size_t numThreads =
-                           std::thread::hardware_concurrency()) :
+                           std::thread::hardware_concurrency() > 0 ?
+                           std::thread::hardware_concurrency() : 1) :
        m_numThreads(numThreads),
        m_outputResult(outputResult)
     {
+      if (m_numThreads == 0)
+      {
+        m_numThreads = 1;
+      }
     }
 
     virtual ~FutureSynchronyzer()
@@ -153,6 +164,9 @@ namespace thread
 
   private:
 
+    /**
+     * @return the next function to be treated.
+     */
     std::function<OutputResult()> getNextFunction()
     {
       std::function<OutputResult()> f = m_functions.back();
@@ -161,11 +175,13 @@ namespace thread
     }
 
     /**
-     * Launch the result operation
+     * Launch the result operation.
+     * This method is used if OutputResult is not void and
+     * ResultPolicy is not ResultPolicy.
      * @param f the finished future with the result
      */
     template<typename Output = OutputResult, typename Policy = ResultPolicy>
-    typename std::enable_if<!(std::is_same<Output, void>::value) || !(std::is_same<Policy, policy::NoResultPolicy>::value), void>::type
+    typename std::enable_if<!(std::is_same<Output, void>::value) && !(std::is_same<Policy, policy::NoResultPolicy>::value), void>::type
     applyResult(std::future<Output> & f)
     {
       Output futureOutput = f.get();
@@ -173,7 +189,9 @@ namespace thread
     }
 
     /**
-     * Launch the result operation
+     * Launch the result operation.
+     * This method is used if OutputResult is void or
+     * ResultPolicy is ResultPolicy.
      * @param f the finished future with the result
      */
     template<typename Output = OutputResult, typename Policy = ResultPolicy>
