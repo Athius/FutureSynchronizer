@@ -8,6 +8,10 @@ include(EnableCXX11)
 
 project(returnVoid CXX)
 
+find_package (Threads)
+
+set(ADDITIONAL_LIBRARIES ${CMAKE_THREAD_LIBS_INIT})
+
 set(PROJECT_EXECUTABLE_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}")
 
 include(Project)
