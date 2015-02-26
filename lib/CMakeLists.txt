@@ -10,7 +10,8 @@ set(PROJECT_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}")
 set(PROJECT_SOURCE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}")
 
 file(GLOB_RECURSE source_files
-                  *.hxx)
+                  *.hxx
+                  *.hpp)
 
 include(Project)
 
