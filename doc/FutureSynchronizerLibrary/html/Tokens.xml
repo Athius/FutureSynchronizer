@@ -2,6 +2,16 @@
 <Tokens version="1.0">
   <Token>
     <TokenIdentifier>
+      <Name>UNUSED</Name>
+      <APILanguage>unknown</APILanguage>
+      <Type>macro</Type>
+    </TokenIdentifier>
+    <Path>_macro_8hpp.html</Path>
+    <Anchor>a86d500a34c624c2cae56bc25a31b12f3</Anchor>
+    <DeclaredIn>Macro.hpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>NoResultPolicy</Name>
       <APILanguage>cpp</APILanguage>
       <Type>tdef</Type>
@@ -263,13 +273,33 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>Function</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>tdef</Type>
+      <Scope>thread::FutureSynchronyzer</Scope>
+    </TokenIdentifier>
+    <Path>classthread_1_1_future_synchronyzer.html</Path>
+    <Anchor>a94ddebc4688410fefcaa63f974fa58f1</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>FunctionPtr</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>tdef</Type>
+      <Scope>thread::FutureSynchronyzer</Scope>
+    </TokenIdentifier>
+    <Path>classthread_1_1_future_synchronyzer.html</Path>
+    <Anchor>a2fe0972b68158b5c19639360bc21492a</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>getNextFunction</Name>
       <APILanguage>cpp</APILanguage>
       <Type>instm</Type>
       <Scope>thread::FutureSynchronyzer</Scope>
     </TokenIdentifier>
     <Path>classthread_1_1_future_synchronyzer.html</Path>
-    <Anchor>a45a5e9e358cebc104bc7816da1b84104</Anchor>
+    <Anchor>a4671e2bc76d5f5ff38c54c1805e26503</Anchor>
     <DeclaredIn>FutureSynchronyzer.hxx</DeclaredIn>
   </Token>
   <Token>
@@ -312,7 +342,7 @@
       <Scope>thread::FutureSynchronyzer</Scope>
     </TokenIdentifier>
     <Path>classthread_1_1_future_synchronyzer.html</Path>
-    <Anchor>a7ab99eb4fbcce75099753ae1c5f5b8f5</Anchor>
+    <Anchor>a09c3d07de298ce494320ddf646748629</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>

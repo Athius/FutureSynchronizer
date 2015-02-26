@@ -36,18 +36,20 @@
             </section>
             <section title="thread" ref="namespacethread.html">
               <section title="FutureSynchronyzer" ref="classthread_1_1_future_synchronyzer.html">
+                <section title="Function" ref="classthread_1_1_future_synchronyzer.html#a94ddebc4688410fefcaa63f974fa58f1" />
+                <section title="FunctionPtr" ref="classthread_1_1_future_synchronyzer.html#a2fe0972b68158b5c19639360bc21492a" />
                 <section title="FutureSynchronyzer" ref="classthread_1_1_future_synchronyzer.html#a1831e7d3dd72a43306df921abd245a69" />
                 <section title="~FutureSynchronyzer" ref="classthread_1_1_future_synchronyzer.html#a48cb77c0d7c1f9bfb7e175e2877251b9" />
                 <section title="addFunction" ref="classthread_1_1_future_synchronyzer.html#ae779bc3d3a10c078c957825699958fec" />
                 <section title="applyResult" ref="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2" />
                 <section title="applyResult" ref="classthread_1_1_future_synchronyzer.html#a28a6cdcdd4c480a7324e20d5567ca348" />
-                <section title="getNextFunction" ref="classthread_1_1_future_synchronyzer.html#a45a5e9e358cebc104bc7816da1b84104" />
+                <section title="getNextFunction" ref="classthread_1_1_future_synchronyzer.html#a4671e2bc76d5f5ff38c54c1805e26503" />
                 <section title="launch" ref="classthread_1_1_future_synchronyzer.html#a14dae5fac679e721ba919d53313c0429" />
                 <section title="launchAndWait" ref="classthread_1_1_future_synchronyzer.html#a5e5528be4da8754e76d7b89914cdb4c1" />
                 <section title="numThreads" ref="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1" />
                 <section title="outputResult" ref="classthread_1_1_future_synchronyzer.html#abce0c645cc03b98fd30ed6943b8de67f" />
                 <section title="wait" ref="classthread_1_1_future_synchronyzer.html#a4bccddb2d806c69cbd23b2a50a1ad678" />
-                <section title="m_functions" ref="classthread_1_1_future_synchronyzer.html#a7ab99eb4fbcce75099753ae1c5f5b8f5" />
+                <section title="m_functions" ref="classthread_1_1_future_synchronyzer.html#a09c3d07de298ce494320ddf646748629" />
                 <section title="m_futures" ref="classthread_1_1_future_synchronyzer.html#ad99b8341e4c51af3d3f62d052ea8252d" />
                 <section title="m_numThreads" ref="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630" />
                 <section title="m_outputResult" ref="classthread_1_1_future_synchronyzer.html#a9d0cf1110ddc2e2c1bf4b27c9e2d9310" />
@@ -69,13 +71,14 @@
             </section>
             <section title="OutputResult *" />
             <section title="size_t" />
-            <section title="vector&lt; std::function&lt; OutputResult()&gt; &gt;" />
+            <section title="vector&lt; FunctionPtr &gt;" />
             <section title="vector&lt; std::future&lt; OutputResult &gt; &gt;" />
           </section>
           <section title="Class Members" ref="functions.html">
             <section title="All" ref="functions.html" />
             <section title="Functions" ref="functions_func.html" />
             <section title="Variables" ref="functions_vars.html" />
+            <section title="Typedefs" ref="functions_type.html" />
           </section>
         </section>
         <section title="Files">
@@ -89,22 +92,27 @@
             </section>
             <section title="FutureSynchronyzer.hxx" ref="_future_synchronyzer_8hxx.html">
               <section title="FutureSynchronyzer" ref="classthread_1_1_future_synchronyzer.html">
+                <section title="Function" ref="classthread_1_1_future_synchronyzer.html#a94ddebc4688410fefcaa63f974fa58f1" />
+                <section title="FunctionPtr" ref="classthread_1_1_future_synchronyzer.html#a2fe0972b68158b5c19639360bc21492a" />
                 <section title="FutureSynchronyzer" ref="classthread_1_1_future_synchronyzer.html#a1831e7d3dd72a43306df921abd245a69" />
                 <section title="~FutureSynchronyzer" ref="classthread_1_1_future_synchronyzer.html#a48cb77c0d7c1f9bfb7e175e2877251b9" />
                 <section title="addFunction" ref="classthread_1_1_future_synchronyzer.html#ae779bc3d3a10c078c957825699958fec" />
                 <section title="applyResult" ref="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2" />
                 <section title="applyResult" ref="classthread_1_1_future_synchronyzer.html#a28a6cdcdd4c480a7324e20d5567ca348" />
-                <section title="getNextFunction" ref="classthread_1_1_future_synchronyzer.html#a45a5e9e358cebc104bc7816da1b84104" />
+                <section title="getNextFunction" ref="classthread_1_1_future_synchronyzer.html#a4671e2bc76d5f5ff38c54c1805e26503" />
                 <section title="launch" ref="classthread_1_1_future_synchronyzer.html#a14dae5fac679e721ba919d53313c0429" />
                 <section title="launchAndWait" ref="classthread_1_1_future_synchronyzer.html#a5e5528be4da8754e76d7b89914cdb4c1" />
                 <section title="numThreads" ref="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1" />
                 <section title="outputResult" ref="classthread_1_1_future_synchronyzer.html#abce0c645cc03b98fd30ed6943b8de67f" />
                 <section title="wait" ref="classthread_1_1_future_synchronyzer.html#a4bccddb2d806c69cbd23b2a50a1ad678" />
-                <section title="m_functions" ref="classthread_1_1_future_synchronyzer.html#a7ab99eb4fbcce75099753ae1c5f5b8f5" />
+                <section title="m_functions" ref="classthread_1_1_future_synchronyzer.html#a09c3d07de298ce494320ddf646748629" />
                 <section title="m_futures" ref="classthread_1_1_future_synchronyzer.html#ad99b8341e4c51af3d3f62d052ea8252d" />
                 <section title="m_numThreads" ref="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630" />
                 <section title="m_outputResult" ref="classthread_1_1_future_synchronyzer.html#a9d0cf1110ddc2e2c1bf4b27c9e2d9310" />
               </section>
+            </section>
+            <section title="Macro.hpp" ref="_macro_8hpp.html">
+              <section title="UNUSED" ref="_macro_8hpp.html#a86d500a34c624c2cae56bc25a31b12f3" />
             </section>
             <section title="Policy.hxx" ref="_policy_8hxx.html">
               <section title="NoPolicy" ref="classpolicy_1_1_no_policy.html" />
@@ -118,10 +126,15 @@
               <section title="NoResultPolicy" ref="_result_policy_8hxx.html#aecc1897b44923d70c17dd7e0425b5255" />
             </section>
           </section>
+          <section title="File Members" ref="globals.html">
+            <section title="All" ref="globals.html" />
+            <section title="Macros" ref="globals_defs.html" />
+          </section>
         </section>
       </section>
     </toc>
     <keywords>
+      <keyword name="UNUSED" id="Macro.hpp::UNUSED" ref="_macro_8hpp.html#a86d500a34c624c2cae56bc25a31b12f3" />
       <keyword name="NoResultPolicy" id="ResultPolicy.hxx::NoResultPolicy" ref="_result_policy_8hxx.html#aecc1897b44923d70c17dd7e0425b5255" />
       <keyword name="FutureFactory" id="FutureFactory" ref="class_future_factory.html" />
       <keyword name="ResultPolicy" id="ResultPolicy" ref="class_result_policy.html" />
@@ -147,11 +160,13 @@
       <keyword name="launchAndWait" id="thread::FutureSynchronyzer::launchAndWait" ref="classthread_1_1_future_synchronyzer.html#a5e5528be4da8754e76d7b89914cdb4c1" />
       <keyword name="outputResult" id="thread::FutureSynchronyzer::outputResult" ref="classthread_1_1_future_synchronyzer.html#abce0c645cc03b98fd30ed6943b8de67f" />
       <keyword name="numThreads" id="thread::FutureSynchronyzer::numThreads" ref="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1" />
-      <keyword name="getNextFunction" id="thread::FutureSynchronyzer::getNextFunction" ref="classthread_1_1_future_synchronyzer.html#a45a5e9e358cebc104bc7816da1b84104" />
+      <keyword name="Function" id="thread::FutureSynchronyzer::Function" ref="classthread_1_1_future_synchronyzer.html#a94ddebc4688410fefcaa63f974fa58f1" />
+      <keyword name="FunctionPtr" id="thread::FutureSynchronyzer::FunctionPtr" ref="classthread_1_1_future_synchronyzer.html#a2fe0972b68158b5c19639360bc21492a" />
+      <keyword name="getNextFunction" id="thread::FutureSynchronyzer::getNextFunction" ref="classthread_1_1_future_synchronyzer.html#a4671e2bc76d5f5ff38c54c1805e26503" />
       <keyword name="applyResult" id="thread::FutureSynchronyzer::applyResult" ref="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2" />
       <keyword name="applyResult" id="thread::FutureSynchronyzer::applyResult" ref="classthread_1_1_future_synchronyzer.html#a28a6cdcdd4c480a7324e20d5567ca348" />
       <keyword name="m_futures" id="thread::FutureSynchronyzer::m_futures" ref="classthread_1_1_future_synchronyzer.html#ad99b8341e4c51af3d3f62d052ea8252d" />
-      <keyword name="m_functions" id="thread::FutureSynchronyzer::m_functions" ref="classthread_1_1_future_synchronyzer.html#a7ab99eb4fbcce75099753ae1c5f5b8f5" />
+      <keyword name="m_functions" id="thread::FutureSynchronyzer::m_functions" ref="classthread_1_1_future_synchronyzer.html#a09c3d07de298ce494320ddf646748629" />
       <keyword name="m_numThreads" id="thread::FutureSynchronyzer::m_numThreads" ref="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630" />
       <keyword name="m_outputResult" id="thread::FutureSynchronyzer::m_outputResult" ref="classthread_1_1_future_synchronyzer.html#a9d0cf1110ddc2e2c1bf4b27c9e2d9310" />
     </keywords>
@@ -184,6 +199,7 @@
       <file>search/search.css</file>
       <file>_future_factory_8hxx_source.html</file>
       <file>_future_synchronyzer_8hxx_source.html</file>
+      <file>_macro_8hpp_source.html</file>
       <file>_policy_8hxx_source.html</file>
       <file>_result_policy_8hxx_source.html</file>
       <file>_future_factory_8hxx.html</file>
@@ -194,6 +210,9 @@
       <file>_future_synchronyzer_8hxx.html</file>
       <file>_future_synchronyzer_8hxx__incl.svg</file>
       <file>_future_synchronyzer_8hxx__incl.svg</file>
+      <file>_macro_8hpp.html</file>
+      <file>_macro_8hpp__dep__incl.svg</file>
+      <file>_macro_8hpp__dep__incl.svg</file>
       <file>_policy_8hxx.html</file>
       <file>_policy_8hxx__dep__incl.svg</file>
       <file>_policy_8hxx__dep__incl.svg</file>
@@ -233,8 +252,8 @@
       <file>classthread_1_1_future_synchronyzer__coll__graph.svg</file>
       <file>classthread_1_1_future_synchronyzer_ad6338eaf056042a00d4af216cb7e77e2_icgraph.svg</file>
       <file>classthread_1_1_future_synchronyzer_ad6338eaf056042a00d4af216cb7e77e2_icgraph.svg</file>
-      <file>classthread_1_1_future_synchronyzer_a45a5e9e358cebc104bc7816da1b84104_icgraph.svg</file>
-      <file>classthread_1_1_future_synchronyzer_a45a5e9e358cebc104bc7816da1b84104_icgraph.svg</file>
+      <file>classthread_1_1_future_synchronyzer_a4671e2bc76d5f5ff38c54c1805e26503_icgraph.svg</file>
+      <file>classthread_1_1_future_synchronyzer_a4671e2bc76d5f5ff38c54c1805e26503_icgraph.svg</file>
       <file>classthread_1_1_future_synchronyzer_a14dae5fac679e721ba919d53313c0429_cgraph.svg</file>
       <file>classthread_1_1_future_synchronyzer_a14dae5fac679e721ba919d53313c0429_cgraph.svg</file>
       <file>classthread_1_1_future_synchronyzer_a14dae5fac679e721ba919d53313c0429_icgraph.svg</file>
@@ -252,6 +271,7 @@
       <file>dir_97aefd0d527b934f1d99a682da8fe6a9.html</file>
       <file>dir_53fe90820655b3d9ac1ef8ef1695bb4d.html</file>
       <file>dir_4c7f6d4650672306240535142be52d53.html</file>
+      <file>dir_158140ff656f78de6c470107cebb8f00.html</file>
       <file>index.html</file>
       <file>namespaces.html</file>
       <file>namespacemembers.html</file>
@@ -288,7 +308,10 @@
       <file>functions_func.html</file>
       <file>functions_func.html</file>
       <file>functions_vars.html</file>
+      <file>functions_type.html</file>
       <file>files.html</file>
+      <file>globals.html</file>
+      <file>globals_defs.html</file>
     </files>
   </filterSection>
 </QtHelpProject>

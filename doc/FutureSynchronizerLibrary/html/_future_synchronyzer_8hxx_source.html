@@ -69,6 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -91,178 +92,216 @@ $(document).ready(function(){initNavTree('_future_synchronyzer_8hxx_source.html'
 <div class="title">FutureSynchronyzer.hxx</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_future_synchronyzer_8hxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * FutureSynchronyzer.hxx</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *  Created on: 24 févr. 2015</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *      Author: rleguay</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifndef FUTURESYNCHRONYZER_HXX_</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define FUTURESYNCHRONYZER_HXX_</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;../policy/ResultPolicy.hxx&quot;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;../factory/FutureFactory.hxx&quot;</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<a href="_future_synchronyzer_8hxx.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * The MIT License (MIT)</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (c) &lt;2015&gt; &lt;Romain LEGUAY romain.leguay@gmail.com&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Permission is hereby granted, free of charge, to any person obtaining a copy</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * of this software and associated documentation files (the &quot;Software&quot;), to deal</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * in the Software without restriction, including without limitation the rights</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * copies of the Software, and to permit persons to whom the Software is</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * furnished to do so, subject to the following conditions:</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * The above copyright notice and this permission notice shall be included in</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * all copies or substantial portions of the Software.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * THE SOFTWARE.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * FutureSynchronyzer.hxx</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> *  Created on: 24 févr. 2015</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *      Author: rleguay</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#ifndef FUTURESYNCHRONYZER_HXX_</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define FUTURESYNCHRONYZER_HXX_</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;../policy/ResultPolicy.hxx&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;../factory/FutureFactory.hxx&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;../util/Macro.hpp&quot;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="namespacethread.html">   39</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacethread.html">thread</a></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">class </span><a class="code" href="class_result_policy.html">ResultPolicy</a>=<a class="code" href="namespacepolicy.html#aecc1897b44923d70c17dd7e0425b5255">policy::NoResultPolicy</a>,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keyword">class </span><a class="code" href="class_future_factory.html">FutureFactory</a>=<a class="code" href="classfactory_1_1_async_future_factory.html">factory::AsyncFutureFactory</a>,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keyword">typename</span> OutputResult=<span class="keywordtype">void</span>&gt;</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html">   49</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classthread_1_1_future_synchronyzer.html">FutureSynchronyzer</a> : <span class="keyword">public</span> <a class="code" href="class_result_policy.html">ResultPolicy</a>, <span class="keyword">public</span> FutureFactory</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#ad99b8341e4c51af3d3f62d052ea8252d">   52</a></span>&#160;    std::vector&lt;std::future&lt;OutputResult&gt;&gt; <a class="code" href="classthread_1_1_future_synchronyzer.html#ad99b8341e4c51af3d3f62d052ea8252d">m_futures</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a7ab99eb4fbcce75099753ae1c5f5b8f5">   53</a></span>&#160;    std::vector&lt;std::function&lt;OutputResult()&gt;&gt; <a class="code" href="classthread_1_1_future_synchronyzer.html#a7ab99eb4fbcce75099753ae1c5f5b8f5">m_functions</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630">   54</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630">m_numThreads</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a9d0cf1110ddc2e2c1bf4b27c9e2d9310">   55</a></span>&#160;    OutputResult * <a class="code" href="classthread_1_1_future_synchronyzer.html#a9d0cf1110ddc2e2c1bf4b27c9e2d9310">m_outputResult</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a1831e7d3dd72a43306df921abd245a69">   65</a></span>&#160;    <a class="code" href="classthread_1_1_future_synchronyzer.html#a1831e7d3dd72a43306df921abd245a69">FutureSynchronyzer</a>(OutputResult * <a class="code" href="classthread_1_1_future_synchronyzer.html#abce0c645cc03b98fd30ed6943b8de67f">outputResult</a> = NULL,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                       <span class="keywordtype">size_t</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1">numThreads</a> =</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                           std::thread::hardware_concurrency() &gt; 0 ?</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                           std::thread::hardware_concurrency() : 1) :</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;       m_numThreads(<a class="code" href="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1">numThreads</a>),</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;       m_outputResult(<a class="code" href="classthread_1_1_future_synchronyzer.html#abce0c645cc03b98fd30ed6943b8de67f">outputResult</a>)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;      <span class="keywordflow">if</span> (m_numThreads == 0)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;      {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        m_numThreads = 1;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a48cb77c0d7c1f9bfb7e175e2877251b9">   78</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#a48cb77c0d7c1f9bfb7e175e2877251b9">~FutureSynchronyzer</a>()</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Fn, <span class="keyword">typename</span>... Args&gt;</div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#ae779bc3d3a10c078c957825699958fec">   88</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#ae779bc3d3a10c078c957825699958fec">addFunction</a>(Fn &amp;&amp; <span class="keyword">function</span>, Args&amp;&amp;... args)</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      std::function&lt;OutputResult()&gt; func = std::bind(<span class="keyword">function</span>,args...);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;      m_functions.push_back(std::move(func));</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a14dae5fac679e721ba919d53313c0429">   97</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#a14dae5fac679e721ba919d53313c0429">launch</a>()</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      <span class="comment">//Initialize parts</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;      <span class="keywordtype">size_t</span> size = m_numThreads &lt; m_functions.size() ?</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;          m_numThreads : m_functions.size();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; size; ++i)</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        std::function&lt;OutputResult()&gt; f = <a class="code" href="classthread_1_1_future_synchronyzer.html#a45a5e9e358cebc104bc7816da1b84104">getNextFunction</a>();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        std::future&lt;OutputResult&gt; future =</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            FutureFactory::template createFuture&lt;OutputResult&gt;(f);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        m_futures.push_back(std::move(future));</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      <span class="comment">//While all functions are not launched;</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <span class="keywordflow">while</span>(!m_functions.empty())</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> numThread = 0; numThread &lt; <a class="code" href="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630">m_numThreads</a>; ++numThread)</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;          std::future_status status =</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;              m_futures[numThread].wait_for(std::chrono::microseconds(0));</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;          <span class="comment">//If the current future is ready</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;          <span class="keywordflow">if</span> (status == std::future_status::ready)</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;          {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="comment">//Then, we calculate the result (if necessary)</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <a class="code" href="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2">applyResult</a>(m_futures[numThread]);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="comment">//And we create a new future.</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            std::function&lt;OutputResult()&gt; f = <a class="code" href="classthread_1_1_future_synchronyzer.html#a45a5e9e358cebc104bc7816da1b84104">getNextFunction</a>();</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            std::future&lt;OutputResult&gt; future =</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                FutureFactory::template createFuture&lt;OutputResult&gt;(f);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            m_futures[numThread] = std::move(future);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;          }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a4bccddb2d806c69cbd23b2a50a1ad678">  135</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#a4bccddb2d806c69cbd23b2a50a1ad678">wait</a>()</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      <span class="keywordflow">for</span> (std::future&lt;OutputResult&gt; &amp; future : m_futures)</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      {</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        future.wait();</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <a class="code" href="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2">applyResult</a>(future);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="namespacethread.html">   42</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacethread.html">thread</a></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">class </span><a class="code" href="class_result_policy.html">ResultPolicy</a>=<a class="code" href="namespacepolicy.html#aecc1897b44923d70c17dd7e0425b5255">policy::NoResultPolicy</a>,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keyword">class </span><a class="code" href="class_future_factory.html">FutureFactory</a>=<a class="code" href="classfactory_1_1_async_future_factory.html">factory::AsyncFutureFactory</a>,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keyword">typename</span> OutputResult=<span class="keywordtype">void</span>&gt;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html">   52</a></span>&#160;  <span class="keyword">class </span><a class="code" href="classthread_1_1_future_synchronyzer.html">FutureSynchronyzer</a> : <span class="keyword">public</span> <a class="code" href="class_result_policy.html">ResultPolicy</a>, <span class="keyword">public</span> FutureFactory</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a94ddebc4688410fefcaa63f974fa58f1">   55</a></span>&#160;    <span class="keyword">typedef</span> std::function&lt;OutputResult()&gt; <a class="code" href="classthread_1_1_future_synchronyzer.html#a94ddebc4688410fefcaa63f974fa58f1">Function</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a2fe0972b68158b5c19639360bc21492a">   56</a></span>&#160;    <span class="keyword">typedef</span> std::shared_ptr&lt;Function&gt; <a class="code" href="classthread_1_1_future_synchronyzer.html#a2fe0972b68158b5c19639360bc21492a">FunctionPtr</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#ad99b8341e4c51af3d3f62d052ea8252d">   58</a></span>&#160;    std::vector&lt;std::future&lt;OutputResult&gt;&gt; <a class="code" href="classthread_1_1_future_synchronyzer.html#ad99b8341e4c51af3d3f62d052ea8252d">m_futures</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a09c3d07de298ce494320ddf646748629">   59</a></span>&#160;    std::vector&lt;FunctionPtr&gt; <a class="code" href="classthread_1_1_future_synchronyzer.html#a09c3d07de298ce494320ddf646748629">m_functions</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630">   60</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630">m_numThreads</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a9d0cf1110ddc2e2c1bf4b27c9e2d9310">   61</a></span>&#160;    OutputResult * <a class="code" href="classthread_1_1_future_synchronyzer.html#a9d0cf1110ddc2e2c1bf4b27c9e2d9310">m_outputResult</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a1831e7d3dd72a43306df921abd245a69">   71</a></span>&#160;    <a class="code" href="classthread_1_1_future_synchronyzer.html#a1831e7d3dd72a43306df921abd245a69">FutureSynchronyzer</a>(OutputResult * <a class="code" href="classthread_1_1_future_synchronyzer.html#abce0c645cc03b98fd30ed6943b8de67f">outputResult</a> = NULL,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                       <span class="keywordtype">size_t</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1">numThreads</a> =</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                           std::thread::hardware_concurrency() &gt; 0 ?</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                           std::thread::hardware_concurrency() : 1) :</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;       m_numThreads(<a class="code" href="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1">numThreads</a>),</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;       m_outputResult(<a class="code" href="classthread_1_1_future_synchronyzer.html#abce0c645cc03b98fd30ed6943b8de67f">outputResult</a>)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      <span class="keywordflow">if</span> (m_numThreads == 0)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        m_numThreads = 1;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a48cb77c0d7c1f9bfb7e175e2877251b9">   84</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#a48cb77c0d7c1f9bfb7e175e2877251b9">~FutureSynchronyzer</a>()</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Fn, <span class="keyword">typename</span>... Args&gt;</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#ae779bc3d3a10c078c957825699958fec">   94</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#ae779bc3d3a10c078c957825699958fec">addFunction</a>(Fn &amp;&amp; <span class="keyword">function</span>, Args&amp;&amp;... args)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      FunctionPtr func = std::make_shared&lt;Function&gt;(std::bind(<span class="keyword">function</span>,args...));</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      m_functions.push_back(func);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a14dae5fac679e721ba919d53313c0429">  103</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#a14dae5fac679e721ba919d53313c0429">launch</a>()</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      FunctionPtr f;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;      <span class="comment">//Initialize parts</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      <span class="keywordtype">size_t</span> size = m_numThreads &lt; m_functions.size() ?</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;          m_numThreads : m_functions.size();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; size; ++i)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        f = <a class="code" href="classthread_1_1_future_synchronyzer.html#a4671e2bc76d5f5ff38c54c1805e26503">getNextFunction</a>();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        std::future&lt;OutputResult&gt; future =</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            FutureFactory::template createFuture&lt;OutputResult&gt;(*f);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        m_futures.push_back(std::move(future));</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <span class="comment">//While all functions are not launched;</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <span class="keywordflow">while</span>(!m_functions.empty())</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> numThread = 0; numThread &lt; <a class="code" href="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630">m_numThreads</a>; ++numThread)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        {</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;          std::future_status status =</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;              m_futures[numThread].wait_for(std::chrono::microseconds(0));</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;          <span class="comment">//If the current future is ready</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;          <span class="keywordflow">if</span> (status == std::future_status::ready)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;          {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="comment">//Then, we calculate the result (if necessary)</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <a class="code" href="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2">applyResult</a>(m_futures[numThread]);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            <span class="comment">//And we create a new future.</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            f = <a class="code" href="classthread_1_1_future_synchronyzer.html#a4671e2bc76d5f5ff38c54c1805e26503">getNextFunction</a>();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            std::future&lt;OutputResult&gt; future =</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                FutureFactory::template createFuture&lt;OutputResult&gt;(*f);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            m_futures[numThread] = std::move(future);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">if</span> (m_functions.empty())</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;              <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;          }</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    }</div>
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;      m_futures.clear();</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
-<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a5e5528be4da8754e76d7b89914cdb4c1">  149</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#a5e5528be4da8754e76d7b89914cdb4c1">launchAndWait</a>()</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      <a class="code" href="classthread_1_1_future_synchronyzer.html#a14dae5fac679e721ba919d53313c0429">launch</a>();</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <a class="code" href="classthread_1_1_future_synchronyzer.html#a4bccddb2d806c69cbd23b2a50a1ad678">wait</a>();</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
-<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#abce0c645cc03b98fd30ed6943b8de67f">  155</a></span>&#160;    OutputResult * <a class="code" href="classthread_1_1_future_synchronyzer.html#abce0c645cc03b98fd30ed6943b8de67f">outputResult</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#a9d0cf1110ddc2e2c1bf4b27c9e2d9310">m_outputResult</a>;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
-<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1">  160</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1">numThreads</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">    </span>{</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630">m_numThreads</a>;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a4bccddb2d806c69cbd23b2a50a1ad678">  146</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#a4bccddb2d806c69cbd23b2a50a1ad678">wait</a>()</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      <span class="keywordflow">for</span> (std::future&lt;OutputResult&gt; &amp; future : m_futures)</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        future.wait();</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <a class="code" href="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2">applyResult</a>(future);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      m_futures.clear();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      m_functions.clear();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a5e5528be4da8754e76d7b89914cdb4c1">  161</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#a5e5528be4da8754e76d7b89914cdb4c1">launchAndWait</a>()</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;      <a class="code" href="classthread_1_1_future_synchronyzer.html#a14dae5fac679e721ba919d53313c0429">launch</a>();</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      <a class="code" href="classthread_1_1_future_synchronyzer.html#a4bccddb2d806c69cbd23b2a50a1ad678">wait</a>();</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
-<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a45a5e9e358cebc104bc7816da1b84104">  170</a></span>&#160;    std::function&lt;OutputResult()&gt; <a class="code" href="classthread_1_1_future_synchronyzer.html#a45a5e9e358cebc104bc7816da1b84104">getNextFunction</a>()</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;      std::function&lt;OutputResult()&gt; f = m_functions.back();</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;      m_functions.pop_back();</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;      <span class="keywordflow">return</span> f;</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#abce0c645cc03b98fd30ed6943b8de67f">  167</a></span>&#160;    OutputResult * <a class="code" href="classthread_1_1_future_synchronyzer.html#abce0c645cc03b98fd30ed6943b8de67f">outputResult</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#a9d0cf1110ddc2e2c1bf4b27c9e2d9310">m_outputResult</a>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1">  172</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1">numThreads</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630">m_numThreads</a>;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Output = OutputResult, <span class="keyword">typename</span> Policy = ResultPolicy&gt;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keyword">typename</span> std::enable_if&lt;!(std::is_same&lt;Output, void&gt;::value) &amp;&amp; !(std::is_same&lt;Policy, policy::NoResultPolicy&gt;::value), <span class="keywordtype">void</span>&gt;::type</div>
-<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2">  185</a></span>&#160;    <a class="code" href="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2">applyResult</a>(std::future&lt;Output&gt; &amp; f)</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;      Output futureOutput = f.get();</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      ResultPolicy::applyResult(m_outputResult, &amp;futureOutput);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Output = OutputResult, <span class="keyword">typename</span> Policy = ResultPolicy&gt;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keyword">typename</span> std::enable_if&lt;(std::is_same&lt;Output, void&gt;::value) || (std::is_same&lt;Policy, policy::NoResultPolicy&gt;::value), <span class="keywordtype">void</span>&gt;::type</div>
-<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a28a6cdcdd4c480a7324e20d5567ca348">  199</a></span>&#160;    <a class="code" href="classthread_1_1_future_synchronyzer.html#a28a6cdcdd4c480a7324e20d5567ca348">applyResult</a>(std::future&lt;Output&gt; &amp; f)</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a4671e2bc76d5f5ff38c54c1805e26503">  182</a></span>&#160;    FunctionPtr <a class="code" href="classthread_1_1_future_synchronyzer.html#a4671e2bc76d5f5ff38c54c1805e26503">getNextFunction</a>()</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;      FunctionPtr f = m_functions.back();</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;      m_functions.pop_back();</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;      <span class="keywordflow">return</span> f;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Output = OutputResult, <span class="keyword">typename</span> Policy = ResultPolicy&gt;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keyword">typename</span> std::enable_if&lt;!(std::is_same&lt;Output, void&gt;::value) &amp;&amp; !(std::is_same&lt;Policy, policy::NoResultPolicy&gt;::value), <span class="keywordtype">void</span>&gt;::type</div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2">  197</a></span>&#160;    <a class="code" href="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2">applyResult</a>(std::future&lt;Output&gt; &amp; f)</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      Output futureOutput = f.get();</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      ResultPolicy::applyResult(m_outputResult, &amp;futureOutput);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    }</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  };</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;} <span class="comment">// namespace thread</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* FUTURESYNCHRONYZER_HXX_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a7ab99eb4fbcce75099753ae1c5f5b8f5"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a7ab99eb4fbcce75099753ae1c5f5b8f5">thread::FutureSynchronyzer::m_functions</a></div><div class="ttdeci">std::vector&lt; std::function&lt; OutputResult()&gt; &gt; m_functions</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:53</div></div>
-<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a4bccddb2d806c69cbd23b2a50a1ad678"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a4bccddb2d806c69cbd23b2a50a1ad678">thread::FutureSynchronyzer::wait</a></div><div class="ttdeci">void wait()</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:135</div></div>
-<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a9d0cf1110ddc2e2c1bf4b27c9e2d9310"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a9d0cf1110ddc2e2c1bf4b27c9e2d9310">thread::FutureSynchronyzer::m_outputResult</a></div><div class="ttdeci">OutputResult * m_outputResult</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:55</div></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Output = OutputResult, <span class="keyword">typename</span> Policy = ResultPolicy&gt;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keyword">typename</span> std::enable_if&lt;(std::is_same&lt;Output, void&gt;::value) || (std::is_same&lt;Policy, policy::NoResultPolicy&gt;::value), <span class="keywordtype">void</span>&gt;::type</div>
+<div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="classthread_1_1_future_synchronyzer.html#a28a6cdcdd4c480a7324e20d5567ca348">  211</a></span>&#160;    <a class="code" href="classthread_1_1_future_synchronyzer.html#a28a6cdcdd4c480a7324e20d5567ca348">applyResult</a>(std::future&lt;Output&gt; &amp; f)</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;      <a class="code" href="_macro_8hpp.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>(f);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  };</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;} <span class="comment">// namespace thread</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* FUTURESYNCHRONYZER_HXX_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a2fe0972b68158b5c19639360bc21492a"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a2fe0972b68158b5c19639360bc21492a">thread::FutureSynchronyzer::FunctionPtr</a></div><div class="ttdeci">std::shared_ptr&lt; Function &gt; FunctionPtr</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:56</div></div>
+<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a4bccddb2d806c69cbd23b2a50a1ad678"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a4bccddb2d806c69cbd23b2a50a1ad678">thread::FutureSynchronyzer::wait</a></div><div class="ttdeci">void wait()</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:146</div></div>
+<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a4671e2bc76d5f5ff38c54c1805e26503"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a4671e2bc76d5f5ff38c54c1805e26503">thread::FutureSynchronyzer::getNextFunction</a></div><div class="ttdeci">FunctionPtr getNextFunction()</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:182</div></div>
+<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a9d0cf1110ddc2e2c1bf4b27c9e2d9310"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a9d0cf1110ddc2e2c1bf4b27c9e2d9310">thread::FutureSynchronyzer::m_outputResult</a></div><div class="ttdeci">OutputResult * m_outputResult</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:61</div></div>
 <div class="ttc" id="class_future_factory_html"><div class="ttname"><a href="class_future_factory.html">FutureFactory</a></div></div>
-<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a48cb77c0d7c1f9bfb7e175e2877251b9"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a48cb77c0d7c1f9bfb7e175e2877251b9">thread::FutureSynchronyzer::~FutureSynchronyzer</a></div><div class="ttdeci">virtual ~FutureSynchronyzer()</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:78</div></div>
+<div class="ttc" id="_macro_8hpp_html_a86d500a34c624c2cae56bc25a31b12f3"><div class="ttname"><a href="_macro_8hpp.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a></div><div class="ttdeci">#define UNUSED(x)</div><div class="ttdef"><b>Definition:</b> Macro.hpp:38</div></div>
+<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a09c3d07de298ce494320ddf646748629"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a09c3d07de298ce494320ddf646748629">thread::FutureSynchronyzer::m_functions</a></div><div class="ttdeci">std::vector&lt; FunctionPtr &gt; m_functions</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:59</div></div>
+<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a48cb77c0d7c1f9bfb7e175e2877251b9"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a48cb77c0d7c1f9bfb7e175e2877251b9">thread::FutureSynchronyzer::~FutureSynchronyzer</a></div><div class="ttdeci">virtual ~FutureSynchronyzer()</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:84</div></div>
 <div class="ttc" id="class_result_policy_html"><div class="ttname"><a href="class_result_policy.html">ResultPolicy</a></div></div>
-<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a28a6cdcdd4c480a7324e20d5567ca348"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a28a6cdcdd4c480a7324e20d5567ca348">thread::FutureSynchronyzer::applyResult</a></div><div class="ttdeci">std::enable_if&lt;(std::is_same&lt; Output, void &gt;::value)||(std::is_same&lt; Policy, policy::NoResultPolicy &gt;::value), void &gt;::type applyResult(std::future&lt; Output &gt; &amp;f)</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:199</div></div>
-<div class="ttc" id="classthread_1_1_future_synchronyzer_html_ae779bc3d3a10c078c957825699958fec"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#ae779bc3d3a10c078c957825699958fec">thread::FutureSynchronyzer::addFunction</a></div><div class="ttdeci">void addFunction(Fn &amp;&amp;function, Args &amp;&amp;...args)</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:88</div></div>
-<div class="ttc" id="namespacepolicy_html_aecc1897b44923d70c17dd7e0425b5255"><div class="ttname"><a href="namespacepolicy.html#aecc1897b44923d70c17dd7e0425b5255">policy::NoResultPolicy</a></div><div class="ttdeci">NoPolicy NoResultPolicy</div><div class="ttdef"><b>Definition:</b> ResultPolicy.hxx:41</div></div>
-<div class="ttc" id="classthread_1_1_future_synchronyzer_html_ad99b8341e4c51af3d3f62d052ea8252d"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#ad99b8341e4c51af3d3f62d052ea8252d">thread::FutureSynchronyzer::m_futures</a></div><div class="ttdeci">std::vector&lt; std::future&lt; OutputResult &gt; &gt; m_futures</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:52</div></div>
-<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a45a5e9e358cebc104bc7816da1b84104"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a45a5e9e358cebc104bc7816da1b84104">thread::FutureSynchronyzer::getNextFunction</a></div><div class="ttdeci">std::function&lt; OutputResult()&gt; getNextFunction()</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:170</div></div>
-<div class="ttc" id="namespacethread_html"><div class="ttname"><a href="namespacethread.html">thread</a></div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:39</div></div>
-<div class="ttc" id="classthread_1_1_future_synchronyzer_html_afda7bfa8c6d4225cbc4ccc7463097630"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630">thread::FutureSynchronyzer::m_numThreads</a></div><div class="ttdeci">size_t m_numThreads</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:54</div></div>
-<div class="ttc" id="classfactory_1_1_async_future_factory_html"><div class="ttname"><a href="classfactory_1_1_async_future_factory.html">factory::AsyncFutureFactory</a></div><div class="ttdef"><b>Definition:</b> FutureFactory.hxx:42</div></div>
-<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a1831e7d3dd72a43306df921abd245a69"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a1831e7d3dd72a43306df921abd245a69">thread::FutureSynchronyzer::FutureSynchronyzer</a></div><div class="ttdeci">FutureSynchronyzer(OutputResult *outputResult=NULL, size_t numThreads=std::thread::hardware_concurrency() &gt; 0?std::thread::hardware_concurrency():1)</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:65</div></div>
-<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a5e5528be4da8754e76d7b89914cdb4c1"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a5e5528be4da8754e76d7b89914cdb4c1">thread::FutureSynchronyzer::launchAndWait</a></div><div class="ttdeci">void launchAndWait()</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:149</div></div>
-<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a14dae5fac679e721ba919d53313c0429"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a14dae5fac679e721ba919d53313c0429">thread::FutureSynchronyzer::launch</a></div><div class="ttdeci">void launch()</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:97</div></div>
-<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a920d84a589fdb363a58890f3f8e248a1"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1">thread::FutureSynchronyzer::numThreads</a></div><div class="ttdeci">size_t numThreads() const </div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:160</div></div>
-<div class="ttc" id="classthread_1_1_future_synchronyzer_html_abce0c645cc03b98fd30ed6943b8de67f"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#abce0c645cc03b98fd30ed6943b8de67f">thread::FutureSynchronyzer::outputResult</a></div><div class="ttdeci">OutputResult * outputResult() const </div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:155</div></div>
-<div class="ttc" id="classthread_1_1_future_synchronyzer_html_ad6338eaf056042a00d4af216cb7e77e2"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2">thread::FutureSynchronyzer::applyResult</a></div><div class="ttdeci">std::enable_if&lt;!(std::is_same&lt; Output, void &gt;::value)&amp;&amp;!(std::is_same&lt; Policy, policy::NoResultPolicy &gt;::value), void &gt;::type applyResult(std::future&lt; Output &gt; &amp;f)</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:185</div></div>
-<div class="ttc" id="classthread_1_1_future_synchronyzer_html"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html">thread::FutureSynchronyzer</a></div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:49</div></div>
+<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a28a6cdcdd4c480a7324e20d5567ca348"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a28a6cdcdd4c480a7324e20d5567ca348">thread::FutureSynchronyzer::applyResult</a></div><div class="ttdeci">std::enable_if&lt;(std::is_same&lt; Output, void &gt;::value)||(std::is_same&lt; Policy, policy::NoResultPolicy &gt;::value), void &gt;::type applyResult(std::future&lt; Output &gt; &amp;f)</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:211</div></div>
+<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a94ddebc4688410fefcaa63f974fa58f1"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a94ddebc4688410fefcaa63f974fa58f1">thread::FutureSynchronyzer::Function</a></div><div class="ttdeci">std::function&lt; OutputResult()&gt; Function</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:55</div></div>
+<div class="ttc" id="classthread_1_1_future_synchronyzer_html_ae779bc3d3a10c078c957825699958fec"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#ae779bc3d3a10c078c957825699958fec">thread::FutureSynchronyzer::addFunction</a></div><div class="ttdeci">void addFunction(Fn &amp;&amp;function, Args &amp;&amp;...args)</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:94</div></div>
+<div class="ttc" id="namespacepolicy_html_aecc1897b44923d70c17dd7e0425b5255"><div class="ttname"><a href="namespacepolicy.html#aecc1897b44923d70c17dd7e0425b5255">policy::NoResultPolicy</a></div><div class="ttdeci">NoPolicy NoResultPolicy</div><div class="ttdef"><b>Definition:</b> ResultPolicy.hxx:42</div></div>
+<div class="ttc" id="classthread_1_1_future_synchronyzer_html_ad99b8341e4c51af3d3f62d052ea8252d"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#ad99b8341e4c51af3d3f62d052ea8252d">thread::FutureSynchronyzer::m_futures</a></div><div class="ttdeci">std::vector&lt; std::future&lt; OutputResult &gt; &gt; m_futures</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:58</div></div>
+<div class="ttc" id="namespacethread_html"><div class="ttname"><a href="namespacethread.html">thread</a></div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:42</div></div>
+<div class="ttc" id="classthread_1_1_future_synchronyzer_html_afda7bfa8c6d4225cbc4ccc7463097630"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630">thread::FutureSynchronyzer::m_numThreads</a></div><div class="ttdeci">size_t m_numThreads</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:60</div></div>
+<div class="ttc" id="classfactory_1_1_async_future_factory_html"><div class="ttname"><a href="classfactory_1_1_async_future_factory.html">factory::AsyncFutureFactory</a></div><div class="ttdef"><b>Definition:</b> FutureFactory.hxx:43</div></div>
+<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a1831e7d3dd72a43306df921abd245a69"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a1831e7d3dd72a43306df921abd245a69">thread::FutureSynchronyzer::FutureSynchronyzer</a></div><div class="ttdeci">FutureSynchronyzer(OutputResult *outputResult=NULL, size_t numThreads=std::thread::hardware_concurrency() &gt; 0?std::thread::hardware_concurrency():1)</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:71</div></div>
+<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a5e5528be4da8754e76d7b89914cdb4c1"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a5e5528be4da8754e76d7b89914cdb4c1">thread::FutureSynchronyzer::launchAndWait</a></div><div class="ttdeci">void launchAndWait()</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:161</div></div>
+<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a14dae5fac679e721ba919d53313c0429"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a14dae5fac679e721ba919d53313c0429">thread::FutureSynchronyzer::launch</a></div><div class="ttdeci">void launch()</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:103</div></div>
+<div class="ttc" id="classthread_1_1_future_synchronyzer_html_a920d84a589fdb363a58890f3f8e248a1"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1">thread::FutureSynchronyzer::numThreads</a></div><div class="ttdeci">size_t numThreads() const </div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:172</div></div>
+<div class="ttc" id="classthread_1_1_future_synchronyzer_html_abce0c645cc03b98fd30ed6943b8de67f"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#abce0c645cc03b98fd30ed6943b8de67f">thread::FutureSynchronyzer::outputResult</a></div><div class="ttdeci">OutputResult * outputResult() const </div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:167</div></div>
+<div class="ttc" id="classthread_1_1_future_synchronyzer_html_ad6338eaf056042a00d4af216cb7e77e2"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2">thread::FutureSynchronyzer::applyResult</a></div><div class="ttdeci">std::enable_if&lt;!(std::is_same&lt; Output, void &gt;::value)&amp;&amp;!(std::is_same&lt; Policy, policy::NoResultPolicy &gt;::value), void &gt;::type applyResult(std::future&lt; Output &gt; &amp;f)</div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:197</div></div>
+<div class="ttc" id="classthread_1_1_future_synchronyzer_html"><div class="ttname"><a href="classthread_1_1_future_synchronyzer.html">thread::FutureSynchronyzer</a></div><div class="ttdef"><b>Definition:</b> FutureSynchronyzer.hxx:52</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a class="el" href="dir_4c7f6d4650672306240535142be52d53.html">thread</a></li><li class="navelem"><a class="el" href="_future_synchronyzer_8hxx.html">FutureSynchronyzer.hxx</a></li>
-    <li class="footer">Generated on Wed Feb 25 2015 21:48:59 for FutureSynchronyzer by
+    <li class="footer">Generated on Thu Feb 26 2015 23:34:59 for FutureSynchronyzer by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

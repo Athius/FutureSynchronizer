@@ -6,6 +6,7 @@ var files =
     [ "FutureSynchronyzer.hxx", "_future_synchronyzer_8hxx.html", [
       [ "FutureSynchronyzer", "classthread_1_1_future_synchronyzer.html", "classthread_1_1_future_synchronyzer" ]
     ] ],
+    [ "Macro.hpp", "_macro_8hpp.html", "_macro_8hpp" ],
     [ "Policy.hxx", "_policy_8hxx.html", [
       [ "NoPolicy", "classpolicy_1_1_no_policy.html", null ]
     ] ],

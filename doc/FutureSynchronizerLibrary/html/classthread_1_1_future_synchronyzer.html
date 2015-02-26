@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('classthread_1_1_future_synchronyzer.ht
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classthread_1_1_future_synchronyzer-members.html">List of all members</a>  </div>
@@ -113,7 +114,7 @@ $(document).ready(function(){initNavTree('classthread_1_1_future_synchronyzer.ht
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classthread_1_1_future_synchronyzer__coll__graph.svg" width="886" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classthread_1_1_future_synchronyzer__coll__graph.svg" width="890" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -136,10 +137,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a920d84a589fdb363a58890f3f8e248a1"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthread_1_1_future_synchronyzer.html#a920d84a589fdb363a58890f3f8e248a1">numThreads</a> () const </td></tr>
 <tr class="separator:a920d84a589fdb363a58890f3f8e248a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:a94ddebc4688410fefcaa63f974fa58f1"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; OutputResult()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthread_1_1_future_synchronyzer.html#a94ddebc4688410fefcaa63f974fa58f1">Function</a></td></tr>
+<tr class="separator:a94ddebc4688410fefcaa63f974fa58f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fe0972b68158b5c19639360bc21492a"><td class="memItemLeft" align="right" valign="top">typedef std::shared_ptr&lt; <a class="el" href="classthread_1_1_future_synchronyzer.html#a94ddebc4688410fefcaa63f974fa58f1">Function</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthread_1_1_future_synchronyzer.html#a2fe0972b68158b5c19639360bc21492a">FunctionPtr</a></td></tr>
+<tr class="separator:a2fe0972b68158b5c19639360bc21492a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a45a5e9e358cebc104bc7816da1b84104"><td class="memItemLeft" align="right" valign="top">std::function&lt; OutputResult()&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthread_1_1_future_synchronyzer.html#a45a5e9e358cebc104bc7816da1b84104">getNextFunction</a> ()</td></tr>
-<tr class="separator:a45a5e9e358cebc104bc7816da1b84104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4671e2bc76d5f5ff38c54c1805e26503"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classthread_1_1_future_synchronyzer.html#a2fe0972b68158b5c19639360bc21492a">FunctionPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthread_1_1_future_synchronyzer.html#a4671e2bc76d5f5ff38c54c1805e26503">getNextFunction</a> ()</td></tr>
+<tr class="separator:a4671e2bc76d5f5ff38c54c1805e26503"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6338eaf056042a00d4af216cb7e77e2"><td class="memTemplParams" colspan="2">template&lt;typename Output  = OutputResult, typename Policy  = ResultPolicy&gt; </td></tr>
 <tr class="memitem:ad6338eaf056042a00d4af216cb7e77e2"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!(std::is_same&lt; Output, void &gt;::value)&amp;&amp;!(std::is_same&lt; Policy, <a class="el" href="namespacepolicy.html#aecc1897b44923d70c17dd7e0425b5255">policy::NoResultPolicy</a> &gt;::value), void &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2">applyResult</a> (std::future&lt; Output &gt; &amp;f)</td></tr>
 <tr class="separator:ad6338eaf056042a00d4af216cb7e77e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,8 +159,8 @@ Private Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ad99b8341e4c51af3d3f62d052ea8252d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::future&lt; OutputResult &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthread_1_1_future_synchronyzer.html#ad99b8341e4c51af3d3f62d052ea8252d">m_futures</a></td></tr>
 <tr class="separator:ad99b8341e4c51af3d3f62d052ea8252d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ab99eb4fbcce75099753ae1c5f5b8f5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::function&lt; OutputResult()&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthread_1_1_future_synchronyzer.html#a7ab99eb4fbcce75099753ae1c5f5b8f5">m_functions</a></td></tr>
-<tr class="separator:a7ab99eb4fbcce75099753ae1c5f5b8f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09c3d07de298ce494320ddf646748629"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classthread_1_1_future_synchronyzer.html#a2fe0972b68158b5c19639360bc21492a">FunctionPtr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthread_1_1_future_synchronyzer.html#a09c3d07de298ce494320ddf646748629">m_functions</a></td></tr>
+<tr class="separator:a09c3d07de298ce494320ddf646748629"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afda7bfa8c6d4225cbc4ccc7463097630"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630">m_numThreads</a></td></tr>
 <tr class="separator:afda7bfa8c6d4225cbc4ccc7463097630"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d0cf1110ddc2e2c1bf4b27c9e2d9310"><td class="memItemLeft" align="right" valign="top">OutputResult *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classthread_1_1_future_synchronyzer.html#a9d0cf1110ddc2e2c1bf4b27c9e2d9310">m_outputResult</a></td></tr>
@@ -163,7 +171,52 @@ Private Attributes</h2></td></tr>
 class thread::FutureSynchronyzer&lt; ResultPolicy, FutureFactory, OutputResult &gt;</h3>
 
 <p>This class permits to add functions and it's arguments and launch them with a limit number of threads defined at the onbject's construction. All the function added must returned the same type of argument. </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="a94ddebc4688410fefcaa63f974fa58f1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ResultPolicy  = policy::NoResultPolicy, class FutureFactory  = factory::AsyncFutureFactory, typename OutputResult  = void&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::function&lt;OutputResult()&gt; <a class="el" href="classthread_1_1_future_synchronyzer.html">thread::FutureSynchronyzer</a>&lt; <a class="el" href="class_result_policy.html">ResultPolicy</a>, <a class="el" href="class_future_factory.html">FutureFactory</a>, OutputResult &gt;::<a class="el" href="classthread_1_1_future_synchronyzer.html#a94ddebc4688410fefcaa63f974fa58f1">Function</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a2fe0972b68158b5c19639360bc21492a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ResultPolicy  = policy::NoResultPolicy, class FutureFactory  = factory::AsyncFutureFactory, typename OutputResult  = void&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::shared_ptr&lt;<a class="el" href="classthread_1_1_future_synchronyzer.html#a94ddebc4688410fefcaa63f974fa58f1">Function</a>&gt; <a class="el" href="classthread_1_1_future_synchronyzer.html">thread::FutureSynchronyzer</a>&lt; <a class="el" href="class_result_policy.html">ResultPolicy</a>, <a class="el" href="class_future_factory.html">FutureFactory</a>, OutputResult &gt;::<a class="el" href="classthread_1_1_future_synchronyzer.html#a2fe0972b68158b5c19639360bc21492a">FunctionPtr</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a1831e7d3dd72a43306df921abd245a69"></a>
 <div class="memitem">
 <div class="memproto">
@@ -361,9 +414,11 @@ template&lt;typename Output  = OutputResult, typename Policy  = ResultPolicy&gt;
   </dd>
 </dl>
 
+<p>References <a class="el" href="_macro_8hpp.html#a86d500a34c624c2cae56bc25a31b12f3">UNUSED</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a45a5e9e358cebc104bc7816da1b84104"></a>
+<a class="anchor" id="a4671e2bc76d5f5ff38c54c1805e26503"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -373,7 +428,7 @@ template&lt;class ResultPolicy  = policy::NoResultPolicy, class FutureFactory  =
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::function&lt;OutputResult()&gt; <a class="el" href="classthread_1_1_future_synchronyzer.html">thread::FutureSynchronyzer</a>&lt; <a class="el" href="class_result_policy.html">ResultPolicy</a>, <a class="el" href="class_future_factory.html">FutureFactory</a>, OutputResult &gt;::getNextFunction </td>
+          <td class="memname"><a class="el" href="classthread_1_1_future_synchronyzer.html#a2fe0972b68158b5c19639360bc21492a">FunctionPtr</a> <a class="el" href="classthread_1_1_future_synchronyzer.html">thread::FutureSynchronyzer</a>&lt; <a class="el" href="class_result_policy.html">ResultPolicy</a>, <a class="el" href="class_future_factory.html">FutureFactory</a>, OutputResult &gt;::getNextFunction </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -394,7 +449,7 @@ template&lt;class ResultPolicy  = policy::NoResultPolicy, class FutureFactory  =
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classthread_1_1_future_synchronyzer_a45a5e9e358cebc104bc7816da1b84104_icgraph.svg" width="766" height="55"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classthread_1_1_future_synchronyzer_a4671e2bc76d5f5ff38c54c1805e26503_icgraph.svg" width="766" height="55"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </p>
 
@@ -424,7 +479,7 @@ template&lt;class ResultPolicy  = policy::NoResultPolicy, class FutureFactory  =
 </div><div class="memdoc">
 <p>Launch all functions </p>
 
-<p>References <a class="el" href="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2">thread::FutureSynchronyzer&lt; ResultPolicy, FutureFactory, OutputResult &gt;::applyResult()</a>, <a class="el" href="classthread_1_1_future_synchronyzer.html#a45a5e9e358cebc104bc7816da1b84104">thread::FutureSynchronyzer&lt; ResultPolicy, FutureFactory, OutputResult &gt;::getNextFunction()</a>, and <a class="el" href="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630">thread::FutureSynchronyzer&lt; ResultPolicy, FutureFactory, OutputResult &gt;::m_numThreads</a>.</p>
+<p>References <a class="el" href="classthread_1_1_future_synchronyzer.html#ad6338eaf056042a00d4af216cb7e77e2">thread::FutureSynchronyzer&lt; ResultPolicy, FutureFactory, OutputResult &gt;::applyResult()</a>, <a class="el" href="classthread_1_1_future_synchronyzer.html#a4671e2bc76d5f5ff38c54c1805e26503">thread::FutureSynchronyzer&lt; ResultPolicy, FutureFactory, OutputResult &gt;::getNextFunction()</a>, and <a class="el" href="classthread_1_1_future_synchronyzer.html#afda7bfa8c6d4225cbc4ccc7463097630">thread::FutureSynchronyzer&lt; ResultPolicy, FutureFactory, OutputResult &gt;::m_numThreads</a>.</p>
 
 <p>Referenced by <a class="el" href="classthread_1_1_future_synchronyzer.html#a5e5528be4da8754e76d7b89914cdb4c1">thread::FutureSynchronyzer&lt; ResultPolicy, FutureFactory, OutputResult &gt;::launchAndWait()</a>.</p>
 
@@ -588,7 +643,7 @@ template&lt;class ResultPolicy  = policy::NoResultPolicy, class FutureFactory  =
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a7ab99eb4fbcce75099753ae1c5f5b8f5"></a>
+<a class="anchor" id="a09c3d07de298ce494320ddf646748629"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -598,7 +653,7 @@ template&lt;class ResultPolicy  = policy::NoResultPolicy, class FutureFactory  =
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::function&lt;OutputResult()&gt; &gt; <a class="el" href="classthread_1_1_future_synchronyzer.html">thread::FutureSynchronyzer</a>&lt; <a class="el" href="class_result_policy.html">ResultPolicy</a>, <a class="el" href="class_future_factory.html">FutureFactory</a>, OutputResult &gt;::m_functions</td>
+          <td class="memname">std::vector&lt;<a class="el" href="classthread_1_1_future_synchronyzer.html#a2fe0972b68158b5c19639360bc21492a">FunctionPtr</a>&gt; <a class="el" href="classthread_1_1_future_synchronyzer.html">thread::FutureSynchronyzer</a>&lt; <a class="el" href="class_result_policy.html">ResultPolicy</a>, <a class="el" href="class_future_factory.html">FutureFactory</a>, OutputResult &gt;::m_functions</td>
         </tr>
       </table>
   </td>
@@ -689,7 +744,7 @@ template&lt;class ResultPolicy  = policy::NoResultPolicy, class FutureFactory  =
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacethread.html">thread</a></li><li class="navelem"><a class="el" href="classthread_1_1_future_synchronyzer.html">FutureSynchronyzer</a></li>
-    <li class="footer">Generated on Wed Feb 25 2015 21:48:59 for FutureSynchronyzer by
+    <li class="footer">Generated on Thu Feb 26 2015 23:34:59 for FutureSynchronyzer by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.9.1 </li>
   </ul>

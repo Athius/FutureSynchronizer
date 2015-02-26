@@ -11,6 +11,6 @@ var hierarchy =
     ] ],
     [ "OutputResult *", null, null ],
     [ "size_t", null, null ],
-    [ "vector< std::function< OutputResult()> >", null, null ],
+    [ "vector< FunctionPtr >", null, null ],
     [ "vector< std::future< OutputResult > >", null, null ]
 ];

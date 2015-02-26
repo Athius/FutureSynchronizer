@@ -59,7 +59,7 @@
 </g>
 <!-- Node4 -->
 <g id="node4" class="node"><title>Node4</title>
-<g id="a_node4"><a xlink:href="classthread_1_1_future_synchronyzer.html#a45a5e9e358cebc104bc7816da1b84104" target="_top" xlink:title="thread::FutureSynchronyzer\l::getNextFunction">
+<g id="a_node4"><a xlink:href="classthread_1_1_future_synchronyzer.html#a4671e2bc76d5f5ff38c54c1805e26503" target="_top" xlink:title="thread::FutureSynchronyzer\l::getNextFunction">
 <polygon fill="white" stroke="black" points="401.48,-0.5 401.48,-32.5 566.221,-32.5 566.221,-0.5 401.48,-0.5"/>
 <text text-anchor="start" x="409.48" y="-18.9" font-family="FreeSans" font-size="12.00">thread::FutureSynchronyzer</text>
 <text text-anchor="middle" x="483.851" y="-6.9" font-family="FreeSans" font-size="12.00">::getNextFunction</text>
