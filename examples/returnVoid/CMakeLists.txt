@@ -8,6 +8,14 @@ include(EnableCXX11)
 
 project(returnVoid CXX)
 
+if (UNIX AND NOT APPLE)
+    if(CMAKE_COMPILER_IS_GNUCXX)
+        if (CMAKE_CXX_COMPILER_VERSION VERSION_LESS "4.9")
+            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,--no-as-needed")
+        endif()
+    endif()
+endif()
+
 find_package (Threads)
 
 set(ADDITIONAL_LIBRARIES ${CMAKE_THREAD_LIBS_INIT})
