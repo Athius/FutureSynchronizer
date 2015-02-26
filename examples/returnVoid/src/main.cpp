@@ -100,6 +100,9 @@ void distPointCalculation()
 
 int main(int argc, char **argv)
 {
+  UNUSED(argc);
+  UNUSED(argv);
+
   std::chrono::system_clock::time_point startPoint, endPoint;
 
   startPoint = std::chrono::system_clock::now();

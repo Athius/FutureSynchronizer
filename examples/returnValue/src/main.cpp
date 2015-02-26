@@ -51,6 +51,9 @@ size_t cumul(const size_t & start, const size_t & end)
 
 int main(int argc, char **argv)
 {
+  UNUSED(argc);
+  UNUSED(argv);
+
   std::chrono::system_clock::time_point startPoint, endPoint;
 
   startPoint = std::chrono::system_clock::now();
