@@ -33,8 +33,10 @@
 
 #include "../policy/ResultPolicy.hxx"
 #include "../factory/FutureFactory.hxx"
+#include "../util/Macro.hpp"
 
 #include <vector>
+#include <memory>
 
 namespace thread
 {
@@ -49,8 +51,11 @@ namespace thread
   class FutureSynchronyzer : public ResultPolicy, public FutureFactory
   {
   private:
+    typedef std::function<OutputResult()> Function;
+    typedef std::shared_ptr<Function> FunctionPtr;
+
     std::vector<std::future<OutputResult>> m_futures;
-    std::vector<std::function<OutputResult()>> m_functions;
+    std::vector<FunctionPtr> m_functions;
     size_t m_numThreads;
     OutputResult * m_outputResult;
 
@@ -87,8 +92,8 @@ namespace thread
     template<typename Fn, typename... Args>
     void addFunction(Fn && function, Args&&... args)
     {
-      std::function<OutputResult()> func = std::bind(function,args...);
-      m_functions.push_back(std::move(func));
+      FunctionPtr func = std::make_shared<Function>(std::bind(function,args...));
+      m_functions.push_back(func);
     }
 
     /**
@@ -96,14 +101,15 @@ namespace thread
      */
     void launch()
     {
+      FunctionPtr f;
       //Initialize parts
       size_t size = m_numThreads < m_functions.size() ?
           m_numThreads : m_functions.size();
       for (size_t i = 0; i < size; ++i)
       {
-        std::function<OutputResult()> f = getNextFunction();
+        f = getNextFunction();
         std::future<OutputResult> future =
-            FutureFactory::template createFuture<OutputResult>(f);
+            FutureFactory::template createFuture<OutputResult>(*f);
         m_futures.push_back(std::move(future));
       }
 
@@ -120,10 +126,14 @@ namespace thread
             //Then, we calculate the result (if necessary)
             applyResult(m_futures[numThread]);
             //And we create a new future.
-            std::function<OutputResult()> f = getNextFunction();
+            f = getNextFunction();
             std::future<OutputResult> future =
-                FutureFactory::template createFuture<OutputResult>(f);
+                FutureFactory::template createFuture<OutputResult>(*f);
             m_futures[numThread] = std::move(future);
+            if (m_functions.empty())
+            {
+              break;
+            }
           }
         }
       }
@@ -141,6 +151,7 @@ namespace thread
       }
 
       m_futures.clear();
+      m_functions.clear();
     }
 
     /**
@@ -167,9 +178,9 @@ namespace thread
     /**
      * @return the next function to be treated.
      */
-    std::function<OutputResult()> getNextFunction()
+    FunctionPtr getNextFunction()
     {
-      std::function<OutputResult()> f = m_functions.back();
+      FunctionPtr f = m_functions.back();
       m_functions.pop_back();
       return f;
     }
@@ -198,6 +209,7 @@ namespace thread
     typename std::enable_if<(std::is_same<Output, void>::value) || (std::is_same<Policy, policy::NoResultPolicy>::value), void>::type
     applyResult(std::future<Output> & f)
     {
+      UNUSED(f);
     }
 
   };
