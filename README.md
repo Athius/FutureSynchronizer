@@ -2,7 +2,7 @@
 
 This project provides some templates to help parallelization.
 
-Requires C++11 compiler (test with Clang (version 6) and Visual Studio 2013, doesn't work with Visual Studio 2012).
+Requires C++11 compiler (tested with Clang (version 6) and Visual Studio 2013, doesn't work with Visual Studio 2012).
 
 ## How to compile:
 
