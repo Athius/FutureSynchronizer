@@ -44,8 +44,9 @@ namespace factory
   {
   public:
     AsyncFutureFactory()
-  {
-  }
+    {
+    }
+
     virtual ~AsyncFutureFactory()
     {
     }
