@@ -67,8 +67,8 @@ int main(int argc, char **argv)
   //Create a future synchronizer with 4 threads,
   //with the policy AddNumberResultPolicy,
   //create AsyncFutureFactory and return a size_t element.
-  thread::FutureSynchronyzer<policy::AddNumberResultPolicy,
-                             factory::AsyncFutureFactory, size_t> sync(&res, 4);
+  thread::FutureSynchronyzer<size_t, policy::AddNumberResultPolicy,
+                             factory::AsyncFutureFactory> sync(&res, 4);
 
   //The loop to add all the functions;
   for (size_t i = 0; i < end; i += step)
