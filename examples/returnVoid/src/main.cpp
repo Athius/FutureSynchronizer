@@ -67,6 +67,10 @@ void calcDistanceToPoint(unsigned int size, unsigned int index, int xIndex2,
 
 void distPointCalculation()
 {
+  std::chrono::system_clock::time_point startPoint, endPoint;
+  startPoint = std::chrono::system_clock::now();
+
+
   unsigned int width = 200;
   unsigned int height = 200;
   unsigned int size = width * height;
@@ -97,17 +101,7 @@ void distPointCalculation()
   {
     ofs << dist << "\n";
   }
-}
 
-int main(int argc, char **argv)
-{
-  UNUSED(argc);
-  UNUSED(argv);
-
-  std::chrono::system_clock::time_point startPoint, endPoint;
-
-  startPoint = std::chrono::system_clock::now();
-  distPointCalculation();
   endPoint = std::chrono::system_clock::now();
 
   auto us = std::chrono::duration_cast<std::chrono::microseconds>(endPoint - startPoint).count();
@@ -119,7 +113,16 @@ int main(int argc, char **argv)
   sec = sec - minutes * 60;
   std::cout << "Time: " << minutes << " min  " << sec << " s " << ms <<
       " ms " << us <<
-      " us" << std::endl;
+      " us; Nb threads: " << sync.numThreads() << std::endl;
+
+}
+
+int main(int argc, char **argv)
+{
+  UNUSED(argc);
+  UNUSED(argv);
+
+  distPointCalculation();
 
   return 0;
 }
