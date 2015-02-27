@@ -37,13 +37,12 @@
 #include "../util/Macro.hpp"
 
 #include <vector>
-#include <memory>
 
 namespace thread
 {
-  template<class ResultPolicy=policy::NoResultPolicy,
-      class FutureFactory=factory::AsyncFutureFactory,
-      typename OutputResult=void>
+  template<typename OutputResult=void,
+      class ResultPolicy=policy::NoResultPolicy,
+      class FutureFactory=factory::AsyncFutureFactory>
   /**
    * This class permits to add functions and it's arguments and launch
    * them with a limit number of threads defined at the onbject's construction.
@@ -53,10 +52,9 @@ namespace thread
   {
   private:
     typedef std::function<OutputResult()> Function;
-    typedef std::shared_ptr<Function> FunctionPtr;
 
     std::vector<std::future<OutputResult>> m_futures;
-    std::vector<FunctionPtr> m_functions;
+    std::vector<Function> m_functions;
     size_t m_numThreads;
     OutputResult * m_outputResult;
 
@@ -93,7 +91,8 @@ namespace thread
     template<typename Fn, typename... Args>
     void addFunction(Fn && function, Args&&... args)
     {
-      FunctionPtr func = std::make_shared<Function>(std::bind(function,args...));
+//      FunctionPtr func = std::make_shared<Function>(std::bind(function,args...));
+      Function func = std::bind(function,args...);
       m_functions.push_back(func);
     }
 
@@ -102,7 +101,7 @@ namespace thread
      */
     void launch()
     {
-      FunctionPtr f;
+      Function f;
       //Initialize parts
       size_t size = m_numThreads < m_functions.size() ?
           m_numThreads : m_functions.size();
@@ -110,7 +109,7 @@ namespace thread
       {
         f = getNextFunction();
         std::future<OutputResult> future =
-            FutureFactory::template createFuture<OutputResult>(*f);
+            FutureFactory::template createFuture<OutputResult>(f);
         m_futures.push_back(std::move(future));
       }
 
@@ -129,7 +128,7 @@ namespace thread
             //And we create a new future.
             f = getNextFunction();
             std::future<OutputResult> future =
-                FutureFactory::template createFuture<OutputResult>(*f);
+                FutureFactory::template createFuture<OutputResult>(f);
             m_futures[numThread] = std::move(future);
             if (m_functions.empty())
             {
@@ -179,9 +178,9 @@ namespace thread
     /**
      * @return the next function to be treated.
      */
-    FunctionPtr getNextFunction()
+    Function getNextFunction()
     {
-      FunctionPtr f = m_functions.back();
+      Function f = m_functions.back();
       m_functions.pop_back();
       return f;
     }
