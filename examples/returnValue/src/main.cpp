@@ -33,6 +33,7 @@
 
 #include <iostream>
 #include <chrono>
+#include <cstdio>
 
 /**
  * This dumb function just return the sum of a loop;
@@ -52,15 +53,22 @@ size_t cumul(const size_t & start, const size_t & end)
 
 int main(int argc, char **argv)
 {
-  UNUSED(argc);
-  UNUSED(argv);
+  //UNUSED(argc);
+  //UNUSED(argv);
+  size_t numThreads = 4;
+  if (argc > 1) {
+    numThreads = atoi(argv[1]);
+  }
 
   std::chrono::system_clock::time_point startPoint, endPoint;
 
   startPoint = std::chrono::system_clock::now();
   size_t end = 500000000;
-  size_t step = 5000000;
-
+  //size_t step = 5000000;
+  size_t step = end / numThreads;
+  if (step == 0) {
+    step = 1;
+  }
   //The output result;
   size_t res = 0;
 
@@ -68,12 +76,15 @@ int main(int argc, char **argv)
   //with the policy AddNumberResultPolicy,
   //create AsyncFutureFactory and return a size_t element.
   thread::FutureSynchronyzer<size_t, policy::AddNumberResultPolicy,
-                             factory::AsyncFutureFactory> sync(&res, 4);
+                             factory::AsyncFutureFactory> sync(&res, numThreads);
 
+  size_t i;
   //The loop to add all the functions;
-  for (size_t i = 0; i < end; i += step)
-  {
-    sync.addFunction(cumul, i, i+step-1);
+  for (i = 0; i < end; i += step) {
+    sync.addFunction(cumul, i, i+step);
+  }
+  if (i < end) {
+    sync.addFunction(cumul, i, end);
   }
 
   //Launch all the function and wait for the result;
@@ -96,6 +107,5 @@ int main(int argc, char **argv)
   std::cout << "Time: " << minutes << " min  " << sec << " s " << ms <<
       " ms " << us <<
       " us; Num Threads: " << sync.numThreads() << std::endl;
-
   return 0;
 }
